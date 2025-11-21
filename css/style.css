@@ -1,0 +1,2395 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pretendard', sans-serif;
+    overflow-wrap: break-word; 
+    word-break: keep-all;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+body {
+    line-height: 1.5;
+    color: #000000;
+    background-color: transparent;
+}
+
+#app {
+    background-color: transparent;
+}
+
+main {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: transparent;
+}
+
+.mobile-only {
+    display: none !important;
+}
+
+.desktop-only {
+    display: block;
+}
+
+.page {
+    display: none;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: transparent;
+}
+
+.page.active {
+    display: block;
+}
+
+.page-header {
+    text-align: left;
+    margin-top: 2rem;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #e40082;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #e40082;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle-small {
+    font-size: 1rem;
+    color: #e40082;
+}
+
+.back-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.back-button-btn,
+.global-back-btn {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #e40082;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.global-back-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    margin: 0;
+}
+
+.back-button-btn .char-wrapper,
+.global-back-btn .char-wrapper {
+    display: inline-block;
+}
+
+.back-button-btn .char-wrapper span,
+.global-back-btn .char-wrapper span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.back-button-btn:hover .char-wrapper span,
+.global-back-btn:hover .char-wrapper span {
+    animation: charWave 0.6s ease-in-out;
+    animation-delay: calc(var(--char-index) * 0.05s);
+    color: #ff8fce;
+}
+
+.back-button-btn:hover,
+.global-back-btn:hover {
+    color: #ff8fce;
+}
+
+.scroll-to-top-btn {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #e40082;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.scroll-to-top-btn .char-wrapper {
+    display: inline-block;
+}
+
+.scroll-to-top-btn .char-wrapper span {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: inherit;
+}
+
+.scroll-to-top-btn:hover .char-wrapper span {
+    animation: charWave 0.6s ease-in-out;
+    animation-delay: calc(var(--char-index) * 0.05s);
+    color: #ff8fce;
+}
+
+.scroll-to-top-btn:hover {
+    color: #ff8fce;
+}
+
+.home-nav-link {
+    text-decoration: underline;
+    color: #e40082;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.resume-index-link {
+    text-decoration: none;
+    color: #e40082;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.home-nav-link .char-wrapper,
+.resume-index-link .char-wrapper {
+    display: inline-block;
+}
+
+.home-nav-link .char-wrapper span {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: inherit;
+    text-decoration: underline;
+}
+
+.resume-index-link .char-wrapper span {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: inherit;
+    text-decoration: none;
+}
+
+.home-nav-link:hover .char-wrapper span {
+    animation: charWave 0.6s ease-in-out;
+    animation-delay: calc(var(--char-index) * 0.05s);
+    color: #ff8fce;
+}
+
+.home-nav-link:hover {
+    color: #ff8fce;
+}
+
+.resume-index-link {
+    line-height: 1.5;
+    z-index: 1;
+}
+
+.resume-index-link:hover .char-wrapper span {
+    animation: charWave 0.6s ease-in-out;
+    color: #ff8fce;
+    animation-delay: calc(var(--char-index) * 0.05s);
+}
+
+.resume-index-link:hover .char-wrapper {
+    transform: translateX(5px);
+}
+
+.resume-index-link.active {
+    color: #e40082;
+}
+
+.resume-index-link.active .char-wrapper span {
+    color: #e40082;
+}
+
+.resume-index-link.active:hover {
+    color: #e40082;
+}
+
+.resume-index-link.active:hover .char-wrapper span {
+    color: #e40082;
+}
+
+.resume-name-link {
+    color: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.resume-name-link:hover {
+    color: #ff8fce;
+}
+
+.resume-name-link .resume-link-char {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.resume-name-link:hover .resume-link-char {
+    color: #ff8fce;
+}
+
+.resume-section a.link-wave {
+    color: #e40082;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.resume-section a.link-wave .syllable-wrapper {
+    display: inline-block;
+}
+
+.resume-section a.link-wave .syllable-wrapper span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    color: inherit;
+}
+
+.resume-section a.link-wave:hover .syllable-wrapper span {
+    animation: charWave 0.6s ease-in-out;
+    animation-delay: calc(var(--char-index) * 0.05s);
+    color: #ff8fce;
+}
+
+.resume-section a.link-wave:hover {
+    color: #ff8fce;
+}
+
+#home-page {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+.home-content-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 2rem;
+    box-sizing: border-box;
+    padding: 0;
+    background-color: transparent;
+}
+
+.home-main-content {
+    flex: 0 0 50%;
+    max-width: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.home-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e40082;
+    margin: 2rem 0 0 2rem;
+}
+
+.home-description {
+    max-width: calc(100% - 4rem);
+    font-size: 1.5rem;
+    color: #e40082;
+    line-height: 1.5;
+    margin: 1rem 0 0 2rem;
+}
+
+.home-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem 0 0 2rem;
+    padding: 0;
+}
+
+/* ============================================
+   7. 방명록 (Guestbook)
+   ============================================ */
+/* 데스크톱 방명록 영역 */
+.guestbook-desktop-area {
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 4rem);
+    max-height: calc(100vh - 4rem);
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.guestbook-desktop-messages {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 2rem;
+    padding-right: 2rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0;
+    padding-bottom: 1rem;
+    min-height: 0;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: transparent;
+    margin: 0 0 1rem 0;
+}
+
+.guestbook-desktop-messages::-webkit-scrollbar {
+    display: none;
+}
+
+.guestbook-desktop-messages .guestbook-message {
+    color: #e40082;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    display: block;
+    white-space: normal;
+    word-wrap: break-word;
+    text-align: right;
+    margin-right: 2rem;
+    width: auto;
+    max-width: calc(100% - 2rem);
+    box-sizing: border-box;
+    position: relative;
+    z-index: 100;
+    background-color: transparent;
+}
+
+/* 모바일 방명록 메시지 */
+.guestbook-messages {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    line-height: 1.5;
+    background-color: transparent;
+}
+
+.guestbook-message {
+    color: #e40082;
+    font-size: 1.5rem;
+    display: block;
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+/* 방명록 입력 폼 */
+.guestbook-form-container {
+    position: fixed;
+    bottom: 0;
+    left: calc(50% + 2rem);
+    right: 1rem;
+    width: calc(50% - 3rem);
+    background-color: #fff;
+    padding: 1rem 0;
+    z-index: 1000;
+}
+
+.guestbook-form {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.guestbook-input {
+    flex: 1;
+    min-width: 0;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-family: 'Pretendard', sans-serif;
+    color: #e40082;
+    background-color: #fff;
+    border: 2px solid #e40082;
+    box-sizing: border-box;
+}
+
+.guestbook-input:focus {
+    outline: none;
+    border-color: #e40082;
+}
+
+.guestbook-submit-btn {
+    background: none;
+    border: none;
+    color: #e40082;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 0;
+    transition: color 0.3s ease;
+    font-family: 'Pretendard', sans-serif;
+    white-space: nowrap;
+    background-color: #fff;
+    flex-shrink: 0;
+}
+
+.guestbook-submit-btn:hover {
+    color: #ff8fce;
+    background: none;
+}
+
+.guestbook-submit-btn .char-wrapper {
+    display: inline-block;
+}
+
+.guestbook-submit-btn .char-wrapper span {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: inherit;
+}
+
+.guestbook-submit-btn:hover .char-wrapper span {
+    animation: charWave 0.6s ease-in-out;
+    animation-delay: calc(var(--char-index) * 0.05s);
+    color: #ff8fce;
+}
+
+/* 방명록 페이지 (데스크톱 전용) */
+#guestbook-page {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: transparent;
+}
+
+.guestbook-page-content {
+    width: 100%;
+    min-height: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    padding-bottom: 120px;
+}
+
+.guestbook-messages-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-bottom: 1rem;
+}
+
+.guestbook-date {
+    color: #e40082;
+    font-size: 1.5rem;
+    display: block;
+    text-align: left;
+    padding-left: 0;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.guestbook-messages-container .guestbook-message {
+    color: #e40082;
+    font-size: 1.5rem;
+    display: block;
+    white-space: normal;
+    word-wrap: break-word;
+    text-align: left;
+    padding-left: 0;
+    margin: 0;
+    line-height: 1.5;
+}
+
+#guestbook-page .global-back-btn {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 1000;
+    padding-left: 0;
+    padding-bottom: 0;
+    margin: 0;
+}
+
+/* 데스크톱 방명록 폼 위치 */
+@media (min-width: 769px) {
+    .guestbook-messages.mobile-only {
+        display: none !important;
+    }
+    
+    .guestbook-form-container {
+        width: calc(50% - 2rem);
+        left: auto;
+        right: 2rem;
+        padding: 1rem 0;
+    }
+}
+
+/* ============================================
+   8. 매뉴얼 페이지
+   ============================================ */
+#manual-page {
+    overflow: hidden;
+}
+
+.manual-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+}
+
+.manual-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 0 2rem 2rem 2rem;
+}
+
+.manual-right {
+    position: relative;
+    overflow: hidden;
+}
+
+.manual-scroll-area {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 2rem;
+    padding-left: 0;
+}
+
+.manual-scroll-area::-webkit-scrollbar {
+    display: none;
+}
+
+.manual-content {
+    max-width: 800px;
+    margin: 1rem 0 3rem 0;
+}
+
+.manual-back-btn {
+    margin: 0;
+}
+
+#manual-page .page-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e40082;
+}
+
+#manual-page .page-header .subtitle,
+#manual-page .page-header .subtitle-small {
+    font-size: 1.5rem;
+    color: #e40082;
+    line-height: 1.5;
+    margin: 0;
+}
+
+#manual-page .page-header .subtitle {
+    font-style: italic;
+}
+
+.manual-body {
+    margin-top: 0;
+    max-width: 800px;
+}
+
+.manual-paragraph {
+    font-size: 1.5rem;
+    color: #e40082;
+    line-height: 1.5;
+    margin-bottom: 0;
+    text-indent: 1.5rem;
+}
+
+.manual-paragraph strong {
+    font-weight: 700;
+}
+
+/* ============================================
+   9. 시금쿠폰 발급 현황 페이지
+   ============================================ */
+#coupons-status-page {
+    overflow: hidden;
+    height: 100%;
+}
+
+.coupon-split-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    height: 100%;
+    max-height: 100vh;
+}
+
+.coupon-list-container {
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.coupon-content-container {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.coupon-content-display {
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 2rem 0;
+    padding-right: 1rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.coupon-content-display::-webkit-scrollbar {
+    display: none;
+}
+
+.coupon-content-display:empty {
+    display: none;
+}
+
+.coupon-panel-content {
+    width: 100%;
+    height: 100%;
+}
+
+.coupon-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 1rem 0;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .coupon-panel-header {
+        display: none;
+    }
+}
+
+.coupon-panel-header h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 600;
+    color: #e40082;
+}
+
+.coupon-panel-content.panel-completed .coupon-panel-header h2 {
+    color: #fff;
+}
+
+.coupon-table-wrapper {
+    width: 100%;
+    overflow-x: visible;
+    overflow-y: hidden;
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+}
+
+.coupon-list-section {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.coupon-index-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+}
+
+.coupon-index-list li {
+    display: list-item;
+}
+
+.coupon-index-link {
+    text-decoration: none;
+    color: #e40082;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.coupon-index-link .char-wrapper {
+    display: inline-block;
+}
+
+.coupon-index-link .char-wrapper span {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: inherit;
+    text-decoration: none;
+}
+
+.coupon-index-link:hover .char-wrapper span {
+    animation: charWave 0.6s ease-in-out;
+    color: #ff8fce;
+    animation-delay: calc(var(--char-index) * 0.05s);
+}
+
+.coupon-index-link:hover .char-wrapper {
+    transform: translateX(5px);
+}
+
+.coupon-index-link.active {
+    color: #e40082;
+}
+
+.coupon-index-link.active .char-wrapper span {
+    color: #e40082;
+}
+
+.coupon-index-link.active:hover {
+    color: #e40082;
+}
+
+.coupon-index-link.active:hover .char-wrapper span {
+    color: #e40082;
+}
+
+.coupon-mobile-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 0 0.5rem 0;
+    box-sizing: border-box;
+}
+
+.coupon-buttons-below-content {
+    position: relative;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+}
+
+.coupon-buttons-below-list {
+    position: fixed;
+    left: 1rem;
+    margin: 0;
+    z-index: 1000;
+}
+
+@media (min-width: 769px) {
+    .coupon-buttons-below-list {
+    position: relative;
+        bottom: auto;
+        left: auto;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.coupon-mobile-back-btn,
+.coupon-mobile-scroll-top-btn {
+    font-size: 1.5rem;
+    text-decoration: underline;
+    color: #e40082;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-weight: 600;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.coupon-mobile-back-btn:hover,
+.coupon-mobile-scroll-top-btn:hover {
+    color: #ff8fce;
+}
+
+.coupon-buttons-below-list .scroll-to-top-btn {
+    display: none;
+}
+
+.coupon-buttons-below-list.has-active .scroll-to-top-btn {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .coupon-buttons-below-list.has-active .scroll-to-top-btn {
+        display: inline-block;
+    }
+}
+
+/* 수행이력 선택 시 전체 페이지 배경색 변경 */
+#coupons-status-page.has-completed,
+#coupons-status-mobile-page.has-completed {
+    background-color: #e40082;
+    color: #fff;
+}
+
+#coupons-status-page.has-completed *,
+#coupons-status-mobile-page.has-completed * {
+    color: #fff;
+}
+
+#coupons-status-page.has-completed .coupon-index-link,
+#coupons-status-mobile-page.has-completed .coupon-index-link {
+    color: #fff;
+}
+
+#coupons-status-page.has-completed .coupon-index-link.active,
+#coupons-status-mobile-page.has-completed .coupon-index-link.active {
+    color: #fff;
+}
+
+#coupons-status-page.has-completed .coupon-mobile-back-btn,
+#coupons-status-page.has-completed .coupon-mobile-scroll-top-btn,
+#coupons-status-mobile-page.has-completed .coupon-mobile-back-btn,
+#coupons-status-mobile-page.has-completed .coupon-mobile-scroll-top-btn {
+    color: #fff;
+}
+
+/* 수행이력 선택 시 리스트 섹션 배경색 변경 */
+#coupons-status-page.has-completed .coupon-list-section,
+#coupons-status-mobile-page.has-completed .coupon-list-section {
+    background-color: #e40082;
+    color: #fff;
+}
+
+#coupons-status-page.has-completed .coupon-list-container,
+#coupons-status-mobile-page.has-completed .coupon-list-container {
+    background-color: #e40082;
+    color: #fff;
+}
+
+/* 수행이력 선택 시 이력서 링크 스타일 */
+#coupons-status-page.has-completed .resume-name-link,
+#coupons-status-mobile-page.has-completed .resume-name-link {
+    color: #fff !important;
+    text-decoration: underline !important;
+}
+
+#coupons-status-page.has-completed .resume-name-link:hover,
+#coupons-status-mobile-page.has-completed .resume-name-link:hover {
+    color: #fff !important;
+    text-decoration: underline !important;
+}
+
+/* 기존 쿠폰 페이지 스타일 (데스크톱용) */
+#coupons-status-page-old {
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.coupons-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.coupon-panel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    transition: left 0.3s ease, width 0.3s ease;
+}
+
+.coupon-panel:not(.expanded) {
+    cursor: pointer;
+}
+
+.coupon-panel.expanded {
+    cursor: default;
+}
+
+.coupon-panel table,
+.coupon-panel button,
+.coupon-panel a {
+    cursor: pointer;
+}
+
+.coupon-panel:not(.expanded) table,
+.coupon-panel:not(.expanded) button,
+.coupon-panel:not(.expanded) a {
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.panel-issued {
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.panel-completed {
+    left: 50%;
+    top: 0;
+    z-index: 2;
+    background-color: #e40082;
+    color: #fff;
+}
+
+.panel-completed.expanded {
+    left: 0;
+    width: 100%;
+}
+
+.panel-issued.expanded {
+    left: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+.panel-completed.hidden-right {
+    left: 100%;
+    width: 100%;
+}
+
+.panel-completed.expanded.hidden-right {
+    left: 100%;
+    width: 100%;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 2rem 1rem 2rem;
+
+    background-color: rgba(0,0,0,0);
+    color: #e40082;
+    cursor: pointer;
+    user-select: none;
+}
+
+.panel-completed .panel-header {
+    background-color: rgba(0,0,0,0);
+    color: #ffffff;
+}
+
+.panel-header h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.panel-content {
+    width: 100%;
+    height: calc(100% - 80px);
+    overflow-y: auto;
+    overflow-x: visible;
+    padding: 0 2rem 2rem 2rem;
+    box-sizing: border-box;
+}
+
+.panel-reset-btn {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 1000;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #e40082;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: none;
+    font-weight: 600;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.panel-reset-btn .char-wrapper {
+    display: inline-block;
+}
+
+.panel-reset-btn .char-wrapper span {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.panel-reset-btn:hover .char-wrapper span {
+    animation: charWave 0.6s ease-in-out;
+    animation-delay: calc(var(--char-index) * 0.05s);
+    color: #ff8fce;
+}
+
+.panel-completed .panel-reset-btn,
+.panel-completed .panel-reset-btn .char-wrapper span {
+    color: #fff !important;
+}
+
+.panel-completed .panel-reset-btn:hover,
+.panel-completed .panel-reset-btn:hover .char-wrapper span {
+    color: #ff8fce !important;
+}
+
+.panel-issued.expanded .panel-reset-btn,
+.panel-completed.expanded .panel-reset-btn {
+    display: block;
+}
+
+.panel-completed .global-back-btn {
+    color: #ffffff;
+}
+
+.panel-completed .coupons-table {
+    background-color: #e40082;
+    color: #fff;
+}
+
+.panel-completed .coupons-table th {
+    background-color: #e40082;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.panel-completed .coupons-table tr.blank-row {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.panel-completed .btn-add {
+    background: none;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.panel-completed .btn-add:hover {
+    color: #ff8fce;
+    background: none;
+    background-color: transparent;
+}
+
+.panel-issued .btn-edit,
+.panel-issued .btn-delete {
+    color: #e40082;
+    background: none;
+    background-color: transparent;
+}
+
+.panel-issued .btn-edit:hover,
+.panel-issued .btn-delete:hover {
+    color: #ff8fce;
+    background: none;
+    background-color: transparent;
+}
+
+.panel-completed .btn-edit,
+.panel-completed .btn-delete {
+    color: #fff;
+    background-color: transparent;
+}
+
+.panel-completed .btn-edit:hover,
+.panel-completed .btn-delete:hover {
+    color: #ff8fce;
+    background-color: transparent;
+}
+
+.panel-completed .resume-name-link {
+    color: #fff;
+}
+
+.panel-completed .resume-name-link:hover {
+    color: #ff8fce;
+}
+
+.admin-controls {
+    margin-bottom: 1rem;
+    text-align: right;
+    padding: 0;
+}
+
+.btn-add {
+    margin: 0 0.5rem 1rem 0;
+    padding: 0;
+    background: none;
+    background-color: transparent;
+    color: #e40082;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.btn-add .char-wrapper {
+    display: inline-block;
+}
+
+.btn-add .char-wrapper span {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: inherit;
+}
+
+.btn-add:hover .char-wrapper span {
+    animation: charWave 0.6s ease-in-out;
+    animation-delay: calc(var(--char-index) * 0.05s);
+    color: #ff8fce;
+}
+
+.btn-add:hover {
+    color: #ff8fce;
+    background: none;
+    background-color: transparent;
+}
+
+.coupons-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+    padding: 0;
+}
+
+.coupons-table th,
+.coupons-table td {
+    background-color: rgba(0,0,0,0);
+    color: #e40082;
+    text-align: left;
+    overflow: visible;
+}
+
+.coupons-table th {
+    font-weight: 600;
+    position: sticky;
+    border-bottom: none;
+    top: 0;
+}
+
+.coupons-table tr.blank-row {
+    background-color: transparent;
+    color: #e40082;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.panel-completed .coupons-table th,
+.panel-completed .coupons-table td {
+    color: #ffffff;
+    background-color: #e40082;
+}
+
+.admin-col {
+    text-align: center;
+}
+
+.panel-completed .coupons-table th:nth-child(6),
+.panel-completed .coupons-table td:nth-child(6) {
+    text-align: center;
+}
+
+.btn-edit,
+.btn-delete {
+    padding: 0;
+    margin-right: 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #e40082;
+    z-index: 10;
+    background: none;
+    background-color: transparent;
+}  
+
+.btn-edit .char-wrapper,
+.btn-delete .char-wrapper {
+    display: inline-block;
+}
+
+.btn-edit .char-wrapper span,
+.btn-delete .char-wrapper span {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.btn-edit:hover .char-wrapper span,
+.btn-delete:hover .char-wrapper span {
+    animation: charWave 0.6s ease-in-out;
+    animation-delay: calc(var(--char-index) * 0.05s);
+    color: #ff8fce;
+}
+
+.btn-edit:hover,
+.btn-delete:hover {
+    color: #ff8fce;
+}
+
+/* 포토 프리뷰 숨김 */
+.photo-preview {
+    display: none !important;
+}
+
+.coupons-table td img {
+    display: block;
+    margin: 0 auto;
+    max-height: 30px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transform-origin: center;
+    cursor: zoom-in;
+    top: 0.3rem;
+    position: relative;
+    
+}
+
+.coupons-table td {
+    overflow: visible;
+    position: relative;
+}
+
+.coupons-table td img:hover {
+    z-index: 5000;
+    transform: scale(5);
+}
+
+/* 모달 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 0;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    margin: auto;
+}
+
+.close {
+    color: #e40082;
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff8fce;
+}
+
+.form-group {
+    margin-bottom: 0.5rem;
+}
+
+.form-group label {
+    padding-top: 1rem;
+    display: block;
+    margin-left: 1rem;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 1.5rem;
+    color: #e40082;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: calc(100% - 2rem);
+    padding: 0.5rem;
+    border: 1px solid #e40082;
+    font-size: 1rem;
+    margin: 0 1rem;
+    display: block;
+}
+
+.form-group select[multiple] {
+    min-height: 120px;
+    padding: 0.5rem;
+}
+
+.form-group input:focus {
+    outline: none;
+}
+
+.form-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+.btn-submit,
+.btn-cancel {
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+    background-color: rgba(0,0,0,0);
+}
+
+.btn-submit {
+    color: #e40082;
+}
+
+.btn-submit:hover {
+    color: #ff8fce;
+}
+
+.btn-cancel {
+    color: #e40082;
+}
+
+.btn-cancel:hover {
+    color: #ff8fce;
+}
+
+/* ============================================
+   10. 이력서 페이지
+   ============================================ */
+#resume-page {
+    overflow: hidden;
+    height: 100%;
+}
+
+.resume-split-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    height: 100%;
+    max-height: 100vh;
+}
+
+.resume-list-container {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.resume-content-container {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; 
+}
+
+.resume-content-display {
+    width: 100%;
+    flex: 1;
+    min-height: 0; 
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 2rem 0;
+    padding-right: 1rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.resume-content-display::-webkit-scrollbar {
+    display: none;
+}
+
+.resume-list-section {
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.resume-index-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+}
+
+.resume-index-list li {
+    display: list-item;
+}
+
+.individual-resumes {
+    margin-top: 2rem;
+}
+
+.individual-resumes h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+}
+
+.individual-resume {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #e40082;
+    line-height: 1.5;
+}
+
+.individual-resume h3,
+.individual-resume h4 {
+    font-size: 1.5rem;
+    color: #e40082;
+    font-weight: 600;
+}
+
+.resume-section {
+    margin: 2rem 0;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #e40082;
+    line-height: 1.5;
+}
+
+.resume-section h4 {
+    font-size: 1.5rem;
+    color: #e40082;
+    font-weight: 600;
+}
+
+.resume-section li strong {
+    color: #e40082;
+    font-weight: 700;
+}
+
+.resume-detail {
+    margin-top: 2rem;
+}
+
+.resume-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem;
+}
+
+.resume-name-btn {
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-size: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.resume-name-btn:hover {
+    background-color: #ff8fce;
+    border-color: #ff8fce;
+}
+
+.note {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #e40082;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* 데스크톱에서 모바일 버튼 숨기기 */
+@media (min-width: 769px) {
+    .resume-mobile-buttons,
+    .resume-buttons-below-content,
+    .resume-buttons-below-list,
+    .resume-mobile-back-btn,
+    .resume-mobile-scroll-top-btn {
+        display: none !important;
+    }
+}
+
+/* ============================================
+   11. 공통 스타일 - 섹션, 리스트 등
+   ============================================ */
+.intro-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #000000;
+    font-style: italic;
+}
+
+.description {
+    line-height: 1.8;
+}
+
+.description p {
+    margin-bottom: 1rem;
+}
+
+.quick-nav {
+    margin-top: 3rem;
+}
+
+.quick-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.quick-nav li {
+    border: none;
+    padding: 0;
+    transition: none;
+}
+
+.quick-nav li:hover {
+    box-shadow: none;
+}
+
+.quick-nav a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+}
+
+.quick-nav h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.quick-nav p {
+    color: #000000;
+    font-size: 0.95rem;
+}
+
+.section h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+}
+
+.section h3 {
+    font-size: 1.3rem;
+}
+
+.section p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.section ul {
+    list-style: none;
+    margin-left: 1rem;
+}
+
+.section ul li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.8;
+}
+
+.section ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+}
+
+.questions {
+    padding: 1.5rem;
+    background-color: transparent;
+    border-left: none;
+}
+
+.questions ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.questions li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.questions li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+dl {
+    margin: 1.5rem 0;
+}
+
+dt {
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+dd {
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.8;
+}
+
+.usage-item {
+    margin: 2rem 0;
+    padding: 1.5rem 0;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.usage-item h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.usage-item ul {
+    list-style: none;
+    margin-left: 1rem;
+}
+
+.usage-item li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.usage-item li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+}
+
+/* ============================================
+   12. 애니메이션
+   ============================================ */
+@keyframes charWave {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    25% {
+        transform: translateY(-3px) translateX(3px);
+    }
+    50% {
+        transform: translateY(-5px) translateX(5px);
+    }
+    75% {
+        transform: translateY(-3px) translateX(3px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveToRight {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(50%);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes moveCharToRight {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(50%) translateY(-10px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(100%) translateY(0);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   13. 반응형 - 모바일 (max-width: 768px)
+   ============================================ */
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none !important;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    /* 홈 페이지 모바일 */
+    #home-page {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .home-content-wrapper {
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        padding-bottom: 120px;
+    }
+
+    .home-main-content {
+        flex: 0 0 auto;
+        max-width: 100%;
+        width: 100%;
+        margin: 0.5rem 0 1rem 0.5rem;
+    }
+
+    .home-title {
+        margin: 0.5rem 0 0 0.5rem;
+    }
+
+    .home-description {
+        margin: 1rem 0 0 0.5rem;
+    }
+
+    .home-nav-list {
+        margin: 1rem 0 0 0.5rem;
+    }
+
+    .guestbook-desktop-area {
+        display: none !important;
+    }
+
+    .guestbook-messages {
+        width: 100%;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .guestbook-message {
+        color: #ff8fce;
+    font-size: 1.5rem;
+        display: block;
+        white-space: normal;
+        word-wrap: break-word;
+        text-align: left;
+        margin-left: 1rem;
+    line-height: 1.5;
+}
+
+    .guestbook-desktop-messages .guestbook-message {
+        margin-left: 1rem;
+    }
+
+    .home-nav-list {
+    line-height: 1.5;
+    }
+
+    .home-nav-link {
+        text-decoration: underline !important;
+    }
+
+    .home-nav-link .char-wrapper span {
+        text-decoration: underline !important;
+    }
+
+    .guestbook-form-container {
+        width: calc(100% - 2rem);
+        left: 1rem;
+        right: 1rem;
+    }
+
+    .guestbook-form {
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    .guestbook-input {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .guestbook-submit-btn {
+        padding: 0.75rem 0;
+        flex-shrink: 0;
+    }
+
+    /* 매뉴얼 페이지 모바일 */
+    #manual-page {
+        margin: 0 1rem;
+        width: calc(100% - 2rem);
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    #manual-page::-webkit-scrollbar {
+        display: none;
+    }
+
+    .manual-layout {
+        display: block;
+        height: auto;
+        min-height: 100%;
+    }
+
+    .manual-left {
+        display: none;
+    }
+
+    .manual-right {
+        position: static;
+        overflow: visible;
+    }
+
+    .manual-scroll-area {
+        height: auto;
+        min-height: 100%;
+        padding: 0;
+        padding-bottom: 1rem;
+    }
+
+    #manual-page .page-header {
+        margin-top: 1rem;
+    }
+
+    .manual-content {
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .manual-mobile-buttons {
+    position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1;
+        margin-top: 4.5rem;
+    }
+
+    .manual-mobile-back-btn,
+    .manual-mobile-scroll-top-btn {
+    font-size: 1.5rem;
+        text-decoration: none;
+        color: #e40082;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    display: inline-block;
+    font-weight: 600;
+        background: none;
+        border: none;
+        padding: 0;
+    }
+
+    .manual-mobile-back-btn:hover,
+    .manual-mobile-scroll-top-btn:hover {
+        color: #ff8fce;
+    }
+
+    /* 쿠폰 페이지 모바일 */
+    #coupons-status-page,
+    #coupons-status-mobile-page {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    #coupons-status-page::-webkit-scrollbar,
+    #coupons-status-mobile-page::-webkit-scrollbar {
+        display: none;
+    }
+
+    .coupon-split-container {
+        grid-template-columns: 1fr;
+        gap: 0;
+        height: auto;
+        min-height: 100%;
+        display: block;
+    }
+
+    .coupon-list-container {
+    position: relative;
+        overflow: visible;
+        height: auto;
+        min-height: 0;
+    }
+
+    .coupon-list-section {
+        margin-top: 0;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        position: relative;
+        background-color: #fff;
+        z-index: 1;
+        padding: 1rem 0;
+    }
+
+    .coupon-index-list li {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .coupon-index-list:has(.coupon-index-link.active) li.coupon-item-inactive {
+        justify-content: flex-end;
+        margin-right: 0;
+    }
+
+    .coupon-content-container {
+        display: block;
+    }
+
+    .coupon-content-display {
+        padding: 1rem 0;
+        padding-bottom: 0;
+    }
+
+    .coupon-content-display:empty {
+        display: none;
+    }
+
+    .coupon-buttons-below-content {
+        display: none;
+    }
+
+    .coupon-content-display:not(:empty) ~ .coupon-buttons-below-content {
+        display: flex;
+    }
+
+    .coupon-buttons-below-list {
+        display: flex;
+        position: fixed;
+        bottom: 0.5rem;
+        left: 1rem;
+        margin: 0;
+        z-index: 1000;
+    }
+
+    .coupon-content-display:not(:empty) ~ .coupon-buttons-below-content ~ .coupon-buttons-below-list {
+        display: none;
+    }
+    
+    .coupon-buttons-below-list.has-active .scroll-to-top-btn {
+        display: none;
+    }
+
+    /* 모바일에서 관리 버튼 숨김 */
+    .btn-add,
+    .btn-edit,
+    .btn-delete {
+        display: none !important;
+    }
+    
+    /* 모바일 쿠폰 페이지 표 너비 설정 및 중앙 정렬 */
+    #coupons-status-mobile-page .coupon-table-wrapper {
+        width: calc(100% - 2rem);
+        margin: 1rem auto;
+        overflow-x: hidden;
+    }
+    
+    #coupons-status-mobile-page .coupon-panel-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+    
+    #coupons-status-mobile-page .coupon-content-display {
+        padding: 1rem 0.5rem;
+        padding-bottom: 0;
+        overflow-x: hidden;
+    }
+    
+    /* 모바일에서 테이블 가로 스크롤 방지 */
+    #coupons-status-mobile-page .coupons-table {
+        table-layout: fixed;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .admin-col {
+        display: none !important;
+    }
+
+    .coupons-table th.admin-col,
+    .coupons-table td.admin-col {
+        display: none !important;
+    }
+
+    /* 모바일에서 coupons-table 양옆 패딩 제거 */
+    #coupons-status-mobile-page .coupons-table {
+        padding: 0;
+    }
+    
+    /* 모바일에서 coupon-table-wrapper 마진 조정 */
+    #coupons-status-mobile-page .coupon-table-wrapper {
+        margin: 1rem 0;
+    }
+
+    /* 모바일에서 이력서 링크 항상 underline */
+    .resume-name-link {
+        text-decoration: underline !important;
+    }
+
+    .mobile-coupon-page .global-back-btn {
+        position: fixed;
+        bottom: 1rem;
+        left: 1rem;
+        z-index: 1000;
+        padding-left: 0;
+    }
+
+    /* 기존 mobile-single-panel 스타일 유지 (호환성) */
+    .mobile-single-panel {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        left: 0 !important;
+        top: 0 !important;
+        background-color: #fff;
+        color: #000;
+    }
+
+    .mobile-single-panel.panel-completed {
+        background-color: #e40082;
+        color: #fff;
+    }
+
+    .mobile-single-panel .panel-header {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .mobile-single-panel .panel-content {
+        padding-left: 0;
+    }
+
+    /* 이력서 페이지 모바일 */
+    #resume-page {
+        margin: 0 1rem;
+        width: calc(100% - 2rem);
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    #resume-page::-webkit-scrollbar {
+        display: none;
+    }
+
+    .resume-split-container {
+        grid-template-columns: 1fr;
+        gap: 0;
+        height: auto;
+        min-height: 100%;
+        display: block;
+    }
+
+    .resume-list-container {
+        position: relative;
+        overflow: visible;
+        height: auto;
+        min-height: 0;
+    }
+
+    .resume-list-section {
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+        position: relative;
+        background-color: #fff;
+        z-index: 1;
+        padding: 1rem 0;
+    }
+
+    .resume-index-list li {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .resume-index-list:has(.resume-index-link.active) li.resume-item-inactive {
+        justify-content: flex-end;
+        margin-right: 0;
+    }
+
+    .resume-index-list li.resume-item-active {
+        justify-content: flex-start;
+    }
+
+    .resume-index-link.active {
+        color: #e40082;
+    }
+
+    .resume-index-link.active .char-wrapper span {
+        color: #e40082;
+    }
+    
+    .resume-content-container {
+        position: relative;
+        display: block;
+    }
+
+    .resume-content-display {
+        padding: 1rem 0;
+    }
+
+    .resume-content-display:empty {
+        display: none;
+    }
+
+    .resume-content-display:not(:empty) {
+        display: block;
+    }
+
+    .back-button {
+        display: none;
+    }
+
+    .resume-buttons-below-content {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1;
+        margin-top: 4.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .resume-buttons-below-content.show {
+        display: flex;
+    }
+
+    .resume-buttons-below-list {
+        position: fixed;
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .resume-buttons-below-list.hide {
+        display: none;
+    }
+
+    .resume-buttons-below-list .scroll-to-top-btn {
+        display: none;
+    }
+
+    .resume-buttons-below-list.has-active .scroll-to-top-btn {
+        display: inline-block;
+    }
+
+    .resume-mobile-back-btn {
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: #e40082;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-block;
+        font-weight: 600;
+        background: none;
+        border: none;
+        padding: 0;
+    }
+
+    .resume-mobile-back-btn:hover {
+        color: #ff8fce;
+    }
+
+    .resume-mobile-scroll-top-btn {
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: #e40082;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-block;
+        font-weight: 600;
+        background: none;
+        border: none;
+        padding: 0;
+    }
+
+    .resume-mobile-scroll-top-btn:hover {
+        color: #ff8fce;
+    }
+    
+    .quick-nav ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .coupons-table {
+        font-size: 1rem;
+    }
+    
+    .coupons-table th,
+    .coupons-table td {
+        padding: 0;
+    }
+
+    .btn-edit,
+    .btn-delete {
+        font-size: 1rem;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+    
+    .resume-list {
+        flex-direction: column;
+    }
+    
+    .resume-name-btn {
+        width: 100%;
+    }
+}
+
+/* ============================================
+   14. 데스크톱 전용 (min-width: 769px)
+   ============================================ */
+@media (min-width: 769px) {
+    .mobile-only {
+        display: none !important;
+    }
+    
+    /* 매뉴얼 페이지 모바일 버튼 숨김 */
+    .manual-mobile-buttons {
+        display: none !important;
+    }
+    
+    /* 모바일 쿠폰 페이지 숨김 */
+    #coupons-status-mobile-page {
+        display: none !important;
+    }
+    
+    /* 데스크톱 홈 페이지에서 방명록 네비게이션 숨김 */
+    .home-nav-list li.desktop-only {
+        display: none !important;
+    }
+    
+    /* 데스크톱 쿠폰 페이지: 원래 패널 구조 사용 */
+    #coupons-status-page .coupon-split-container {
+        display: none !important;
+    }
+    
+    #coupons-status-page .coupons-container {
+        display: block !important;
+    }
+}
+
+/* ============================================
+   15. 모바일 전용 (max-width: 768px)
+   ============================================ */
+@media (max-width: 768px) {
+    /* 데스크톱 쿠폰 페이지 숨김 */
+    #coupons-status-page {
+        display: none !important;
+    }
+}

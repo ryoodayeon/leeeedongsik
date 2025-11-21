@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시간이 금이다 - 콜렉티브 이동식</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main id="app">
+        <!-- 홈 페이지 -->
+        <div id="home-page" class="page active">
+            <div class="home-content-wrapper">
+                <div class="home-main-content">
+                    <h1 class="home-title">시간이 금이다</h1>
+                    <p class="home-description">이 전시는 '시간이 금이다!'로 운영됩니다.</p>
+                    <p class="home-description">'시간이 금이다!(Time is gold!)'는 전시에 참여한 모든 공동작업자에게 '노동 쿠폰'를 지급하는 프로젝트이다. 공동작업자는 전시에 투여된 각자의 노동 시간을 기록하고, 이를 화폐 단위로 환산하여 쿠폰을 통해 타인의 노동력으로 교환한다.</p>
+                    
+                    <ul class="home-nav-list">
+                        <li><a href="#" data-page="manual" class="home-nav-link"><span class="char-wrapper"></span></a></li>
+                        <li><a href="#" data-page="coupons-status" class="home-nav-link"><span class="char-wrapper"></span></a></li>
+                        <li><a href="#" data-page="resume" class="home-nav-link"><span class="char-wrapper"></span></a></li>
+                        <li class="desktop-only"><a href="#" data-page="guestbook" class="home-nav-link"><span class="char-wrapper"></span></a></li>
+                    </ul>
+                </div>
+
+                <!-- 데스크톱 방명록 영역 (오른쪽 50%) -->
+                <div class="guestbook-desktop-area desktop-only">
+                    <div class="guestbook-desktop-messages" id="guestbook-desktop-messages">
+                        <!-- 방명록 메시지 표시 영역 -->
+                    </div>
+                </div>
+
+                <!-- 모바일 방명록 메시지 표시 영역 -->
+                <div class="guestbook-messages mobile-only" id="guestbook-messages"></div>
+            </div>
+
+            <!-- 방명록 입력 폼 (fixed) -->
+            <div class="guestbook-form-container">
+                <form id="guestbook-form" class="guestbook-form">
+                    <input type="text" id="guestbook-input" class="guestbook-input" placeholder="방명록을 입력하세요..." required>
+                    <button type="submit" class="guestbook-submit-btn"><span class="char-wrapper"></span></button>
+                </form>
+            </div>
+        </div>
+
+        <!-- 메뉴얼 페이지 -->
+        <div id="manual-page" class="page">
+            <div class="manual-layout">
+                <div class="manual-left">
+                    <button class="back-button-btn manual-back-btn" onclick="showPage('home')"><span class="char-wrapper">뒤로가기</span></button>
+                </div>
+                <div class="manual-right">
+                    <div class="manual-scroll-area">
+                        <header class="page-header">
+                            <h1>시금제 메뉴얼</h1>
+                            <p class="subtitle">시간이 금이다!</p>
+                            <p class="subtitle-small">레지던시 운영 매뉴얼 / 노동 쿠폰제 안내 문서</p>
+                        </header>
+
+                        <section class="manual-content">
+                            <div class="manual-body">
+                                <p class="manual-paragraph">
+                                    <strong>1. 개요</strong><br>
+                                    '시간이 금이다' 프로젝트는 전시에 참여한 모든 공동작업자에게 '노동 쿠폰'를 지급하는 프로젝트이다. 공동작업자는 전시에 투여된 각자의 노동 시간을 기록하고, 이를 화폐 단위로 환산하여 쿠폰을 통해 타인의 노동력으로 교환한다.
+                                </p>
+
+                                <p class="manual-paragraph">
+                                    <strong>—— 질문들</strong><br>
+                                    비가시화된 미술 노동을 드러낼 수 있는 방법은 무엇일까?<br>
+                                    타인의 노동이 나의 가능성으로 전이될 수 있을까?<br>
+                                    자본주의적 효율성과는 다른 형태의 노동-관계-시간은 무엇일까?<br>
+                                    노동-관계-시간이 화폐의 단위가 되면 미술 노동자 사이의 비대칭적 위계는 어떻게 재조정될 수 있을까?<br>
+                                    나의 노동이 우리의 약속이자, 유예이며, 어쩌면 아직 오지 않은 행위를 위한 빈자리가 되어줄 수 있을까?<br>
+                                    협업은 일시적 사건이 아니라 지속가능한 '관계적 순환'이 될 수 있을까?<br>
+                                    탈중심이 아니라, 공동의 중심이 증식하고 팽창하는 생태계를 꿈꿀 수 있을까?
+                                </p>
+
+                                <p class="manual-paragraph">
+                                    <strong>2. 기본 단위</strong><br>
+                                    화폐 명칭 : 시금 쿠폰<br>
+                                    단위 : 시금 / 화폐 1장 = 1 시금 = 30분의 노동력 (ex. 쿠폰 2장을 받은 동식이는 자신의 2시금으로 1시간의 노동력을 요구할 수 있다)<br>
+                                    환산 기준 : 각자 수행한 노동시간을 기준으로 발행하며, 결과물의 완성도/생산물과는 무관하다.<br>
+                                    교환 방식 : 타인의 노동(도움, 기술, 아이디어 등)과 교환 가능<br>
+                                    보상 제한 : 금전 거래 불가(시간 단위로만 교환 가능), '매매'를 연상시키는 상황은 엄격히 금지
+                                </p>
+
+                                <p class="manual-paragraph">
+                                    <strong>3. 사용방식</strong><br>
+                                    시간 등록 — 30분 이상 전시에 일조한 모든 사람은 '공동작업자'가 된다. 공동작업자는 전시에 투여한 시간을 기록한다.<br>
+                                    쿠폰 발행 — 30분 단위로 쿠폰을 발행한다. 각 쿠폰에는 발행자, 날짜, 활동 내용 등이 표기된다.<br>
+                                    교환 및 사용 — 교환은 오프라인(직접 전달) 방식으로 이루어지며 사용 내역은 웹페이지에 기록된다.<br>
+                                    기록 아카이브화 (웹페이지) — 모든 쿠폰의 발행·교환 내역, 각자의 시간 이력을 웹에서 열람 가능하게 구성한다. 이 페이지는 동시에 콜렉티브 이동식과 공동작업자의 참여 이력서로 작동한다. 결과물이 아니라, 투여된 시간 자체가 예술적(관계적) 근거가 된다.
+                                </p>
+
+                                <p class="manual-paragraph">
+                                    <strong>4. 주의 및 윤리 지침</strong><br>
+                                    모든 노동력 교환은 상호 동의를 전제로 한다.<br>
+                                    서로 다른 속도, 집중도, 감정의 소모를 각자의 시간성으로 존중한다.<br>
+                                    '노동의 위계' 혹은 '결과물 중심의 평가'로 전환되지 않도록 주의한다.<br>
+                                    쿠폰은 보상 수단이 아니라 시간적 연대의 매개체임을 기억하자.<br>
+                                    매매를 연상시키는 상황은 생기지 않도록 한다.
+                                </p>
+                            </div>
+                        </section>
+                        <div class="manual-mobile-buttons">
+                            <button class="back-button-btn manual-mobile-back-btn" onclick="showPage('home')"><span class="char-wrapper">뒤로가기</span></button>
+                            <button class="scroll-to-top-btn manual-mobile-scroll-top-btn" onclick="scrollToTop('manual-page')"><span class="char-wrapper">위로가기</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 시금쿠폰 발급 현황 페이지 (모바일: 세로로 50%씩 나눔) -->
+        <div id="coupons-status-mobile-page" class="page mobile-coupon-page">
+            <div class="coupon-split-container">
+                <div class="coupon-list-container">
+                    <section class="coupon-list-section">
+                        <ul class="coupon-index-list">
+                            <li><a href="#" data-coupon="issued" class="coupon-index-link"><span class="char-wrapper">발급 목록</span></a></li>
+                            <li><a href="#" data-coupon="completed" class="coupon-index-link"><span class="char-wrapper">수행 목록</span></a></li>
+                        </ul>
+                    </section>
+                    <section class="back-button">
+                        <button class="back-button-btn"><span class="char-wrapper">뒤로가기</span></button>
+                    </section>
+                </div>
+                <div class="coupon-content-container">
+                    <div id="coupon-content-display-mobile" class="coupon-content-display">
+                        <!-- 클릭 시 내용이 여기에 표시됨 -->
+                    </div>
+                    <div class="coupon-mobile-buttons coupon-buttons-below-content">
+                        <button class="back-button-btn coupon-mobile-back-btn"><span class="char-wrapper">뒤로가기</span></button>
+                        <button class="scroll-to-top-btn coupon-mobile-scroll-top-btn" onclick="scrollToTop('coupons-status-mobile-page')"><span class="char-wrapper">위로가기</span></button>
+                    </div>
+                </div>
+                <div class="coupon-mobile-buttons coupon-buttons-below-list">
+                    <button class="back-button-btn coupon-mobile-back-btn-list"><span class="char-wrapper">뒤로가기</span></button>
+                    <button class="scroll-to-top-btn coupon-mobile-scroll-top-btn-list" onclick="scrollToTop('coupons-status-mobile-page')"><span class="char-wrapper">위로가기</span></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 시금쿠폰 발급 현황 페이지 -->
+        <div id="coupons-status-page" class="page">
+            <div class="coupons-container">
+                <div id="panel-issued" class="coupon-panel panel-issued">
+                    <div class="panel-header">
+                        <h2>발급목록</h2>
+                        <button class="btn-add" onclick="openAddForm('issued')"><span class="char-wrapper">추가</span></button>
+                    </div>
+                    <div class="panel-content">
+                        <div class="coupon-table-wrapper">
+                            <table class="coupons-table">
+                                <thead>
+                                    <tr>
+                                        <th>순서</th>
+                                        <th>발급일자</th>
+                                        <th>노동자</th>
+                                        <th>노동내용</th>
+                                        <th>시금(시간)</th>
+                                        <th>발급자</th>
+                                        <th class="admin-col">관리</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="issued-table-body">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <button class="panel-reset-btn" onclick="resetPanelPosition()" style="display: none;"><span class="char-wrapper">원래대로</span></button>
+                </div>
+                <div id="panel-completed" class="coupon-panel panel-completed">
+                    <div class="panel-header">
+                        <h2>수행목록</h2>
+                        <button class="btn-add" onclick="openAddForm('completed')"><span class="char-wrapper">추가</span></button>
+                    </div>
+                    <div class="panel-content">
+                        <div class="coupon-table-wrapper">
+                            <table class="coupons-table">
+                                <thead>
+                                    <tr>
+                                        <th>순서</th>
+                                        <th>수행일자</th>
+                                        <th>노동자</th>
+                                        <th>노동내용</th>
+                                        <th>시금(시간)</th>
+                                        <th>사진</th>
+                                        <th class="admin-col">관리</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="completed-table-body">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <button class="panel-reset-btn" onclick="resetPanelPosition()" style="display: none;"><span class="char-wrapper">원래대로</span></button>
+                </div>
+            </div>
+            <button class="back-button-btn global-back-btn" onclick="showPage('home')"><span class="char-wrapper">뒤로가기</span></button>
+        </div>
+
+        <!-- 이력서 목록 페이지 -->
+        <div id="resume-page" class="page">
+            <div class="resume-split-container">
+                <div class="resume-list-container">
+                    <section class="resume-list-section">
+                        <ul class="resume-index-list">
+                            <li><a href="#" data-resume="team" class="resume-index-link"><span class="char-wrapper">콜렉티브 이동식</span></a></li>
+                            <li><a href="#" data-resume="구정환" class="resume-index-link"><span class="char-wrapper">구정환</span></a></li>
+                            <li><a href="#" data-resume="민지홍" class="resume-index-link"><span class="char-wrapper">민지홍</span></a></li>
+                            <li><a href="#" data-resume="박중현" class="resume-index-link"><span class="char-wrapper">박중현</span></a></li>
+                            <li><a href="#" data-resume="석유림" class="resume-index-link"><span class="char-wrapper">석유림</span></a></li>
+                            <li><a href="#" data-resume="정지윤" class="resume-index-link"><span class="char-wrapper">정지윤</span></a></li>
+                        </ul>
+                    </section>
+                    <section class="back-button">
+                        <button class="back-button-btn"><span class="char-wrapper">뒤로가기</span></button>
+                    </section>
+                </div>
+                <div class="resume-content-container">
+                    <div id="resume-content-display" class="resume-content-display">
+                        <!-- 클릭 시 내용이 여기에 표시됨 -->
+                    </div>
+                    <div class="resume-mobile-buttons resume-buttons-below-content">
+                        <button class="back-button-btn resume-mobile-back-btn"><span class="char-wrapper">뒤로가기</span></button>
+                        <button class="scroll-to-top-btn resume-mobile-scroll-top-btn" onclick="scrollToTop('resume-page')"><span class="char-wrapper">위로가기</span></button>
+                    </div>
+                </div>
+                <div class="resume-mobile-buttons resume-buttons-below-list">
+                    <button class="back-button-btn resume-mobile-back-btn-list"><span class="char-wrapper">뒤로가기</span></button>
+                    <button class="scroll-to-top-btn resume-mobile-scroll-top-btn-list" onclick="scrollToTop('resume-page')"><span class="char-wrapper">위로가기</span></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="구정환-page" class="page">
+            <header class="page-header">
+                <h4>구정환</h4>
+            </header>
+            <div id="resume-detail-구정환" class="resume-detail"></div>
+        </div>
+
+        <div id="민지홍-page" class="page">
+            <header class="page-header">
+                <h4>민지홍</h4>
+            </header>
+            <div id="resume-detail-민지홍" class="resume-detail"></div>
+        </div>
+
+        <div id="박중현-page" class="page">
+            <header class="page-header">
+                <h4>박중현</h4>
+            </header>
+            <div id="resume-detail-박중현" class="resume-detail"></div>
+        </div>
+
+        <div id="석유림-page" class="page">
+            <header class="page-header">
+                <h4>석유림</h4>
+            </header>
+            <div id="resume-detail-석유림" class="resume-detail"></div>
+        </div>
+
+        <div id="정지윤-page" class="page">
+            <header class="page-header">
+                <h4>정지윤</h4>
+            </header>
+            <div id="resume-detail-정지윤" class="resume-detail"></div>
+        </div>
+
+        <!-- 방명록 페이지 (데스크톱 전용) -->
+        <div id="guestbook-page" class="page desktop-only">
+            <div class="guestbook-page-content">
+                <div class="guestbook-messages-container" id="guestbook-messages-container">
+                    <!-- 동적으로 로드됨 -->
+                </div>
+            </div>
+            <button class="back-button-btn global-back-btn" onclick="showPage('home')"><span class="char-wrapper">뒤로가기</span></button>
+        </div>
+    </main>
+
+    <!-- 모달: 쿠폰 추가/수정 폼 -->
+    <div id="coupon-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <form id="coupon-form">
+                <input type="hidden" id="coupon-id" name="id">
+                <input type="hidden" id="coupon-type" name="type">
+                
+                <div class="form-group" id="issued-select-group" style="display: none;">
+                    <label for="issued-select">발급 쿠폰 선택:</label>
+                    <select id="issued-select" name="issued_id" multiple required>
+                        <option value="">선택하세요</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="date">일자:</label>
+                    <input type="text" id="date" name="date" required placeholder="예: 25.11.15.">
+                </div>
+                
+                <div class="form-group" id="worker-group">
+                    <label for="worker">노동자:</label>
+                    <input type="text" id="worker" name="worker" required>
+                </div>
+                
+                <div class="form-group" id="performer-group" style="display: none;">
+                    <label for="performer">노동자:</label>
+                    <input type="text" id="performer" name="performer" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label for="content">노동내용:</label>
+                    <input type="text" id="content" name="content" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="amount">시금(시간):</label>
+                    <input type="text" id="amount" name="amount" required placeholder="예: 3시금(1시간 30분)">
+                </div>
+                
+                <div class="form-group" id="issuer-group">
+                    <label for="issuer">발급자:</label>
+                    <input type="text" id="issuer" name="issuer">
+                </div>
+                
+                <div class="form-group" id="photo-group" style="display: none;">
+                    <label for="photo">사진:</label>
+                    <input type="file" id="photo" name="photo" accept="image/*">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">저장</button>
+                    <button type="button" class="btn-cancel" onclick="closeModal()">취소</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="js/app.js"></script>
+    <script src="js/resume-data.js"></script>
+</body>
+</html>
