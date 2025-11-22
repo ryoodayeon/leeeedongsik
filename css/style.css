@@ -7,6 +7,10 @@
     word-break: keep-all;
 }
 
+html {
+    font-size: 48px;
+}
+
 html, body {
     height: 100%;
     overflow: hidden;
@@ -2065,7 +2069,33 @@ dd {
     }
     
     .coupon-mobile-notice {
-        font-size: 0.75rem;
+        font-size: inherit !important;
+    }
+    
+    .guestbook-submit-btn {
+        font-size: inherit !important;
+    }
+    
+    #manual-page .page-header h1 {
+        font-size: inherit !important;
+    }
+    
+    #manual-page .page-header .subtitle,
+    #manual-page .page-header .subtitle-small {
+        font-size: inherit !important;
+    }
+    
+    .manual-paragraph {
+        font-size: inherit !important;
+    }
+    
+    .home-title {
+        font-size: inherit !important;
+    }
+    
+    .subtitle,
+    .subtitle-small {
+        font-size: inherit !important;
     }
 
     .coupon-index-list li {
