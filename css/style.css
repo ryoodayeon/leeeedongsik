@@ -1793,8 +1793,12 @@ dd {
 }
 
 @media (max-width: 768px) {
+    html {
+        font-size: 0.5rem;
+    }
+    
     body {
-        font-size: 0.25rem;
+        font-size: 1rem;
     }
     
     .desktop-only {
