@@ -17,6 +17,7 @@ body {
     line-height: 1.5;
     color: #000000;
     background-color: transparent;
+    font-weight: 400;
 }
 
 #app {
@@ -92,7 +93,7 @@ main {
     display: inline-block;
     position: relative;
     z-index: 1;
-    font-weight: 600;
+    font-weight: 700;
     background: none;
     border: none;
     padding: 0;
@@ -140,7 +141,7 @@ main {
     display: inline-block;
     position: relative;
     z-index: 1;
-    font-weight: 600;
+    font-weight: 700;
     background: none;
     border: none;
     padding: 0;
@@ -169,7 +170,7 @@ main {
 .home-nav-link {
     color: #e40082;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.5;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -181,7 +182,7 @@ main {
     text-decoration: none;
     color: #e40082;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.5;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -468,7 +469,7 @@ main {
     border: none;
     color: #e40082;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     margin-right: 0;
     transition: color 0.3s ease;
@@ -647,7 +648,12 @@ main {
     color: #e40082;
     line-height: 1.5;
     margin-bottom: 0;
-    text-indent: 1.5rem;
+    margin-top: 1.5rem;
+    text-indent: 0;
+}
+
+.manual-paragraph:first-child {
+    margin-top: 0;
 }
 
 .manual-paragraph strong {
@@ -729,7 +735,7 @@ main {
 .coupon-panel-header h2 {
     font-size: 1.5rem;
     margin: 0;
-    font-weight: 600;
+    font-weight: 700;
     color: #e40082;
 }
 
@@ -767,7 +773,7 @@ main {
     text-decoration: none;
     color: #e40082;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.5;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -859,7 +865,7 @@ main {
     cursor: pointer;
     transition: all 0.3s ease;
     display: inline-block;
-    font-weight: 600;
+    font-weight: 700;
     background: none;
     border: none;
     padding: 0;
@@ -1036,7 +1042,7 @@ main {
 .panel-header h2 {
     font-size: 1.5rem;
     margin: 0;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
 }
 
@@ -1060,7 +1066,7 @@ main {
     cursor: pointer;
     transition: all 0.3s ease;
     display: none;
-    font-weight: 600;
+    font-weight: 700;
     background: none;
     border: none;
     padding: 0;
@@ -1221,7 +1227,7 @@ main {
 }
 
 .coupons-table th {
-    font-weight: 600;
+    font-weight: 700;
     position: sticky;
     border-bottom: none;
     top: 0;
@@ -1493,7 +1499,7 @@ main {
 .individual-resume h4 {
     font-size: 1.5rem;
     color: #e40082;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .resume-section {
@@ -1507,12 +1513,47 @@ main {
 .resume-section h4 {
     font-size: 1.5rem;
     color: #e40082;
-    font-weight: 600;
+    font-weight: 700;
+}
+
+.resume-section li {
+    padding-left: 0;
+}
+
+/* "할 수 있는 일", "해보고 싶은 일", "할 수 없는 일" 섹션의 모든 li에 들여쓰기 */
+.resume-section:has(ol) li,
+.resume-section:has(ul) li {
+    padding-left: 2rem;
+}
+
+/* 단, "경력 및 공모당선" 같은 섹션은 제외 (구조로 구분) */
+.resume-section:has(h4:contains("경력")) li {
+    padding-left: 0;
 }
 
 .resume-section li strong {
     color: #e40082;
     font-weight: 700;
+    display: block;
+    margin-top: 1.5rem;
+}
+
+.resume-section li:first-child strong {
+    margin-top: 0;
+}
+
+.resume-section li p {
+    margin-top: 0;
+    padding-left: 0;
+}
+
+.resume-section p {
+    padding-left: 0;
+}
+
+.resume-second-paragraph {
+    display: inline-block;
+    text-indent: 2rem;
 }
 
 .resume-detail {
@@ -1786,6 +1827,10 @@ dd {
    13. 반응형 - 모바일 (max-width: 768px)
    ============================================ */
 @media (max-width: 768px) {
+    body {
+        font-size: 0.75rem;
+    }
+    
     .desktop-only {
         display: none !important;
     }
@@ -1821,11 +1866,11 @@ dd {
     }
 
     .home-description {
-        margin: 1rem 0 0 0.5rem;
+        margin: 0.75rem 0 0 0.5rem;
     }
 
     .home-nav-list {
-        margin: 1rem 0 0 0.5rem;
+        margin: 0.75rem 0 0 0.5rem;
     }
 
     .guestbook-desktop-area {
@@ -1915,11 +1960,11 @@ dd {
         height: auto;
         min-height: 100%;
         padding: 0;
-        padding-bottom: 1rem;
+        padding-bottom: 0.75rem;
     }
 
     #manual-page .page-header {
-        margin-top: 1rem;
+        margin-top: 0.75rem;
     }
 
     .manual-content {
@@ -1942,12 +1987,12 @@ dd {
     .manual-mobile-back-btn,
     .manual-mobile-scroll-top-btn {
     font-size: 1.5rem;
-        text-decoration: none;
+    text-decoration: none;
         color: #e40082;
         cursor: pointer;
         transition: all 0.3s ease;
     display: inline-block;
-    font-weight: 600;
+    font-weight: 700;
         background: none;
         border: none;
         padding: 0;
@@ -1997,7 +2042,12 @@ dd {
         position: relative;
         background-color: #fff;
         z-index: 1;
-        padding: 1rem 0;
+        padding: 0.75rem 0;
+    }
+    
+    .coupon-mobile-notice {
+        margin-top: 0.75rem;
+        font-size: 0.75rem;
     }
 
     .coupon-index-list li {
@@ -2016,7 +2066,7 @@ dd {
     }
 
     .coupon-content-display {
-        padding: 1rem 0;
+        padding: 0.75rem 0;
         padding-bottom: 0;
     }
 
@@ -2059,7 +2109,7 @@ dd {
     /* 모바일 쿠폰 페이지 표 너비 설정 및 중앙 정렬 */
     #coupons-status-mobile-page .coupon-table-wrapper {
         width: calc(100% - 2rem);
-        margin: 1rem auto;
+        margin: 0.75rem auto;
         overflow-x: hidden;
     }
     
@@ -2071,7 +2121,7 @@ dd {
     }
     
     #coupons-status-mobile-page .coupon-content-display {
-        padding: 1rem 0.5rem;
+        padding: 0.75rem 0.5rem;
         padding-bottom: 0;
         overflow-x: hidden;
     }
@@ -2099,7 +2149,7 @@ dd {
     
     /* 모바일에서 coupon-table-wrapper 마진 조정 */
     #coupons-status-mobile-page .coupon-table-wrapper {
-        margin: 1rem 0;
+        margin: 0.75rem 0;
     }
 
 
@@ -2173,7 +2223,7 @@ dd {
         position: relative;
         background-color: #fff;
         z-index: 1;
-        padding: 1rem 0;
+        padding: 0.75rem 0;
     }
 
     .resume-index-list li {
@@ -2205,7 +2255,7 @@ dd {
     }
 
     .resume-content-display {
-        padding: 1rem 0;
+        padding: 0.75rem 0;
     }
 
     .resume-content-display:empty {
@@ -2230,7 +2280,7 @@ dd {
         align-items: center;
         z-index: 1;
         margin-top: 4.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
     }
 
     .resume-buttons-below-content.show {
@@ -2267,7 +2317,7 @@ dd {
         cursor: pointer;
         transition: all 0.3s ease;
         display: inline-block;
-        font-weight: 600;
+        font-weight: 700;
         background: none;
         border: none;
         padding: 0;
@@ -2284,7 +2334,7 @@ dd {
         cursor: pointer;
         transition: all 0.3s ease;
         display: inline-block;
-        font-weight: 600;
+        font-weight: 700;
         background: none;
         border: none;
         padding: 0;
@@ -2299,7 +2349,7 @@ dd {
     }
     
     .coupons-table {
-        font-size: 1rem;
+        font-size: 0.75rem;
     }
     
     .coupons-table th,
@@ -2309,7 +2359,7 @@ dd {
 
     .btn-edit,
     .btn-delete {
-        font-size: 1rem;
+        font-size: 0.75rem;
     }
     
     .modal-content {
