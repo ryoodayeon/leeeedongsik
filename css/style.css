@@ -1802,7 +1802,7 @@ dd {
 
 @media (max-width: 768px) {
     body {
-        font-size: 1rem;
+        font-size: 1.125rem;
     }
     
     body * {
@@ -1833,20 +1833,17 @@ dd {
     .page-header h1,
     .subtitle,
     .subtitle-small,
-    .note {
+    .note,
+    .coupon-mobile-notice {
         font-size: inherit;
     }
     
-    .coupon-mobile-notice {
-        font-size: 1rem;
-    }
-    
     .resume-section {
-        font-size: 1rem !important;
+        font-size: inherit !important;
     }
     
     .resume-section h4 {
-        font-size: 1rem !important;
+        font-size: inherit !important;
     }
     
     .desktop-only {
