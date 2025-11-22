@@ -1993,9 +1993,12 @@ dd {
     }
 
     .manual-content {
-        margin: 0;
-        margin-bottom: calc(5rem + env(safe-area-inset-bottom));
+        margin: 1rem 0 calc(5rem + env(safe-area-inset-bottom)) 0;
         max-width: 100%;
+    }
+    
+    .manual-paragraph:first-child {
+        margin-top: 0;
     }
 
     .manual-mobile-buttons {
@@ -2119,7 +2122,7 @@ dd {
     .coupon-buttons-below-list {
         display: flex;
         position: fixed;
-        bottom: calc(1rem + env(safe-area-inset-bottom));
+        bottom: 1rem;
         left: 1rem;
         right: 1rem;
         margin: 0;
@@ -2144,7 +2147,7 @@ dd {
     
     #coupons-status-mobile-page .coupon-table-wrapper {
         width: calc(100% - 2rem);
-        margin: 0.75rem auto;
+        margin: 1.5rem auto 0.75rem auto;
         overflow-x: hidden;
     }
     
