@@ -167,7 +167,6 @@ main {
 }
 
 .home-nav-link {
-    text-decoration: underline;
     color: #e40082;
     font-size: 1.5rem;
     font-weight: 600;
@@ -199,7 +198,6 @@ main {
     display: inline-block;
     transition: transform 0.3s ease, color 0.3s ease;
     color: inherit;
-    text-decoration: underline;
 }
 
 .resume-index-link .char-wrapper span {
@@ -252,7 +250,6 @@ main {
 
 .resume-name-link {
     color: inherit;
-    text-decoration: underline;
     cursor: pointer;
     transition: color 0.3s ease;
 }
@@ -272,7 +269,6 @@ main {
 
 .resume-section a.link-wave {
     color: #e40082;
-    text-decoration: underline;
     transition: color 0.3s ease;
     position: relative;
     display: inline-block;
@@ -752,6 +748,7 @@ main {
 .coupon-list-section {
     margin-top: 1rem;
     margin-left: 1rem;
+    color: #e40082;
 }
 
 .coupon-index-list {
@@ -815,6 +812,14 @@ main {
     color: #e40082;
 }
 
+.coupon-mobile-notice {
+    margin-top: 1rem;
+    margin-left: 0;
+    font-size: 1rem;
+    color: inherit;
+    line-height: 1.5;
+}
+
 .coupon-mobile-buttons {
     display: flex;
     justify-content: space-between;
@@ -850,7 +855,6 @@ main {
 .coupon-mobile-back-btn,
 .coupon-mobile-scroll-top-btn {
     font-size: 1.5rem;
-    text-decoration: underline;
     color: #e40082;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -926,13 +930,11 @@ main {
 #coupons-status-page.has-completed .resume-name-link,
 #coupons-status-mobile-page.has-completed .resume-name-link {
     color: #fff !important;
-    text-decoration: underline !important;
 }
 
 #coupons-status-page.has-completed .resume-name-link:hover,
 #coupons-status-mobile-page.has-completed .resume-name-link:hover {
     color: #fff !important;
-    text-decoration: underline !important;
 }
 
 /* 기존 쿠폰 페이지 스타일 (데스크톱용) */
@@ -1338,22 +1340,6 @@ main {
     max-width: 500px;
     position: relative;
     margin: auto;
-}
-
-.close {
-    color: #e40082;
-    float: right;
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-}
-
-.close:hover,
-.close:focus {
-    color: #ff8fce;
 }
 
 .form-group {
@@ -1873,13 +1859,6 @@ dd {
     line-height: 1.5;
     }
 
-    .home-nav-link {
-        text-decoration: underline !important;
-    }
-
-    .home-nav-link .char-wrapper span {
-        text-decoration: underline !important;
-    }
 
     .guestbook-form-container {
         width: calc(100% - 2rem);
@@ -2123,10 +2102,6 @@ dd {
         margin: 1rem 0;
     }
 
-    /* 모바일에서 이력서 링크 항상 underline */
-    .resume-name-link {
-        text-decoration: underline !important;
-    }
 
     .mobile-coupon-page .global-back-btn {
         position: fixed;
@@ -2381,6 +2356,15 @@ dd {
     
     #coupons-status-page .coupons-container {
         display: block !important;
+    }
+    
+    /* 데스크톱 네비게이션: text-decoration 제거 */
+    .home-nav-link {
+        text-decoration: none !important;
+    }
+    
+    .home-nav-link .char-wrapper span {
+        text-decoration: none !important;
     }
 }
 
