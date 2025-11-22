@@ -1802,7 +1802,7 @@ dd {
 
 @media (max-width: 768px) {
     body {
-        font-size: 0.75rem;
+        font-size: 0.875rem;
     }
     
     body * {
@@ -1824,7 +1824,6 @@ dd {
     .resume-section p,
     .guestbook-message,
     .guestbook-date,
-    .coupon-mobile-notice,
     .manual-mobile-back-btn,
     .manual-mobile-scroll-top-btn,
     .resume-mobile-back-btn,
@@ -1836,6 +1835,10 @@ dd {
     .subtitle-small,
     .note {
         font-size: inherit;
+    }
+    
+    .coupon-mobile-notice {
+        font-size: 0.875rem;
     }
     
     .desktop-only {
@@ -2295,6 +2298,7 @@ dd {
         z-index: 1;
         margin-top: 4.5rem;
         margin-bottom: calc(5rem + env(safe-area-inset-bottom));
+        padding-bottom: calc(3rem + env(safe-area-inset-bottom));
     }
 
     .resume-buttons-below-content.show {
