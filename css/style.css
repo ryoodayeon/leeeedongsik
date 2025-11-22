@@ -1802,7 +1802,7 @@ dd {
 
 @media (max-width: 768px) {
     body {
-        font-size: 0.875rem;
+        font-size: 1rem;
     }
     
     body * {
@@ -1838,7 +1838,15 @@ dd {
     }
     
     .coupon-mobile-notice {
-        font-size: 0.875rem;
+        font-size: 1rem;
+    }
+    
+    .resume-section {
+        font-size: 1rem !important;
+    }
+    
+    .resume-section h4 {
+        font-size: 1rem !important;
     }
     
     .desktop-only {
