@@ -1521,6 +1521,15 @@ main {
     padding-left: 0;
 }
 
+.resume-section.want-to-do ul li,
+.resume-section.cannot-do ul li {
+    padding-left: 2rem;
+}
+
+.resume-section.want-to-do > p {
+    padding-left: 2rem;
+}
+
 .resume-second-paragraph {
     display: inline-block;
     text-indent: 2rem;
@@ -1794,7 +1803,7 @@ dd {
 
 @media (max-width: 768px) {
     body {
-        font-size: 0.5rem;
+        font-size: 1rem;
     }
     
     .desktop-only {
@@ -2189,6 +2198,7 @@ dd {
         margin-top: 0;
         margin-left: 0;
         margin-right: 0;
+        margin-bottom: calc(5rem + env(safe-area-inset-bottom));
         position: relative;
         background-color: #fff;
         z-index: 1;
@@ -2259,16 +2269,16 @@ dd {
     }
 
     .resume-buttons-below-list {
-        position: relative;
-        bottom: auto;
+        position: fixed;
+        bottom: calc(1rem + env(safe-area-inset-bottom));
         left: 1rem;
-        right: auto;
+        right: 1rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        z-index: 1;
-        margin-top: 2rem;
-        margin-bottom: calc(3rem + env(safe-area-inset-bottom));
+        z-index: 1000;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .resume-buttons-below-list.hide {

@@ -1707,7 +1707,7 @@ function showResumeContent(name) {
                 </ol>
             </div>
             
-            <div class="resume-section">
+            <div class="resume-section want-to-do">
                 <h4>${resumeData.wantToDoTitle || '해보고 싶은 일'}</h4>
                 ${Array.isArray(resumeData.wantToDo) 
                     ? `<ul>${resumeData.wantToDo.map(item => {
@@ -1721,7 +1721,7 @@ function showResumeContent(name) {
             </div>
             
             ${resumeData.cannotDo && resumeData.cannotDo.length > 0 ? `
-            <div class="resume-section">
+            <div class="resume-section cannot-do">
                 <h4>할 수 없는 일</h4>
                 <ul>
                     ${resumeData.cannotDo.map(item => `<li>${item}</li>`).join('')}
