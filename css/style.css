@@ -807,7 +807,6 @@ main {
 .coupon-mobile-notice {
     margin-top: 1rem;
     margin-left: 0;
-    font-size: 1rem;
     color: inherit;
     line-height: 1.5;
 }
@@ -2013,6 +2012,7 @@ dd {
         margin-top: 0;
         margin-left: 1rem;
         margin-right: 1rem;
+        margin-bottom: calc(5rem + env(safe-area-inset-bottom));
         position: relative;
         background-color: #fff;
         z-index: 1;
@@ -2020,7 +2020,6 @@ dd {
     }
     
     .coupon-mobile-notice {
-        margin-top: 0.75rem;
         font-size: 0.75rem;
     }
 
@@ -2066,13 +2065,14 @@ dd {
 
     .coupon-buttons-below-list {
         display: flex;
-        position: relative;
-        bottom: auto;
+        position: fixed;
+        bottom: calc(1rem + env(safe-area-inset-bottom));
         left: 1rem;
+        right: 1rem;
         margin: 0;
-        margin-top: 2rem;
-        margin-bottom: calc(3rem + env(safe-area-inset-bottom));
-        z-index: 1;
+        margin-top: 0;
+        margin-bottom: 0;
+        z-index: 1000;
     }
 
     .coupon-content-display:not(:empty) ~ .coupon-buttons-below-content ~ .coupon-buttons-below-list {
@@ -2236,7 +2236,7 @@ dd {
     .resume-content-display {
         padding: 0.75rem 0;
         padding-bottom: 0;
-        margin-bottom: calc(5rem + env(safe-area-inset-bottom));
+        margin-bottom: calc(8rem + env(safe-area-inset-bottom));
     }
 
     .resume-content-display:empty {
@@ -2261,7 +2261,7 @@ dd {
         align-items: center;
         z-index: 1;
         margin-top: 4.5rem;
-        margin-bottom: calc(3rem + env(safe-area-inset-bottom));
+        margin-bottom: calc(5rem + env(safe-area-inset-bottom));
     }
 
     .resume-buttons-below-content.show {
