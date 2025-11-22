@@ -11,7 +11,6 @@
 </head>
 <body>
     <main id="app">
-        <!-- 홈 페이지 -->
         <div id="home-page" class="page active">
             <div class="home-content-wrapper">
                 <div class="home-main-content">
@@ -27,18 +26,14 @@
                     </ul>
                 </div>
 
-                <!-- 데스크톱 방명록 영역 (오른쪽 50%) -->
                 <div class="guestbook-desktop-area desktop-only">
                     <div class="guestbook-desktop-messages" id="guestbook-desktop-messages">
-                        <!-- 방명록 메시지 표시 영역 -->
                     </div>
                 </div>
 
-                <!-- 모바일 방명록 메시지 표시 영역 -->
                 <div class="guestbook-messages mobile-only" id="guestbook-messages"></div>
             </div>
 
-            <!-- 방명록 입력 폼 (fixed) -->
             <div class="guestbook-form-container">
                 <form id="guestbook-form" class="guestbook-form">
                     <input type="text" id="guestbook-input" class="guestbook-input" placeholder="방명록을 입력하세요..." required>
@@ -47,7 +42,6 @@
             </div>
         </div>
 
-        <!-- 메뉴얼 페이지 -->
         <div id="manual-page" class="page">
             <div class="manual-layout">
                 <div class="manual-left">
@@ -115,7 +109,6 @@
             </div>
         </div>
 
-        <!-- 시금쿠폰 발급 현황 페이지 (모바일: 세로로 50%씩 나눔) -->
         <div id="coupons-status-mobile-page" class="page mobile-coupon-page">
             <div class="coupon-split-container">
                 <div class="coupon-list-container">
@@ -132,7 +125,6 @@
                 </div>
                 <div class="coupon-content-container">
                     <div id="coupon-content-display-mobile" class="coupon-content-display">
-                        <!-- 클릭 시 내용이 여기에 표시됨 -->
                     </div>
                     <div class="coupon-mobile-buttons coupon-buttons-below-content">
                         <button class="back-button-btn coupon-mobile-back-btn"><span class="char-wrapper">뒤로가기</span></button>
@@ -146,7 +138,6 @@
             </div>
         </div>
 
-        <!-- 시금쿠폰 발급 현황 페이지 -->
         <div id="coupons-status-page" class="page">
             <div class="coupons-container">
                 <div id="panel-issued" class="coupon-panel panel-issued">
@@ -205,7 +196,6 @@
             <button class="back-button-btn global-back-btn" onclick="showPage('home')"><span class="char-wrapper">뒤로가기</span></button>
         </div>
 
-        <!-- 이력서 목록 페이지 -->
         <div id="resume-page" class="page">
             <div class="resume-split-container">
                 <div class="resume-list-container">
@@ -225,7 +215,6 @@
                 </div>
                 <div class="resume-content-container">
                     <div id="resume-content-display" class="resume-content-display">
-                        <!-- 클릭 시 내용이 여기에 표시됨 -->
                     </div>
                     <div class="resume-mobile-buttons resume-buttons-below-content">
                         <button class="back-button-btn resume-mobile-back-btn"><span class="char-wrapper">뒤로가기</span></button>
@@ -274,18 +263,15 @@
             <div id="resume-detail-정지윤" class="resume-detail"></div>
         </div>
 
-        <!-- 방명록 페이지 (데스크톱 전용) -->
         <div id="guestbook-page" class="page desktop-only">
             <div class="guestbook-page-content">
                 <div class="guestbook-messages-container" id="guestbook-messages-container">
-                    <!-- 동적으로 로드됨 -->
                 </div>
             </div>
             <button class="back-button-btn global-back-btn" onclick="showPage('home')"><span class="char-wrapper">뒤로가기</span></button>
         </div>
     </main>
 
-    <!-- 모달: 쿠폰 추가/수정 폼 -->
     <div id="coupon-modal" class="modal">
         <div class="modal-content">
             <form id="coupon-form">

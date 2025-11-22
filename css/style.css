@@ -348,10 +348,6 @@ main {
     padding: 0;
 }
 
-/* ============================================
-   7. 방명록 (Guestbook)
-   ============================================ */
-/* 데스크톱 방명록 영역 */
 .guestbook-desktop-area {
     flex: 0 0 50%;
     max-width: 50%;
@@ -406,7 +402,6 @@ main {
     background-color: transparent;
 }
 
-/* 모바일 방명록 메시지 */
 .guestbook-messages {
     width: 100%;
     margin-top: 2rem;
@@ -426,7 +421,6 @@ main {
     line-height: 1.5;
 }
 
-/* 방명록 입력 폼 */
 .guestbook-form-container {
     position: fixed;
     bottom: 0;
@@ -500,7 +494,6 @@ main {
     color: #ff8fce;
 }
 
-/* 방명록 페이지 (데스크톱 전용) */
 #guestbook-page {
     margin: 0;
     padding: 0;
@@ -560,7 +553,6 @@ main {
     margin: 0;
 }
 
-/* 데스크톱 방명록 폼 위치 */
 @media (min-width: 769px) {
     .guestbook-messages.mobile-only {
         display: none !important;
@@ -574,9 +566,6 @@ main {
     }
 }
 
-/* ============================================
-   8. 매뉴얼 페이지
-   ============================================ */
 #manual-page {
     overflow: hidden;
 }
@@ -660,9 +649,6 @@ main {
     font-weight: 700;
 }
 
-/* ============================================
-   9. 시금쿠폰 발급 현황 페이지
-   ============================================ */
 #coupons-status-page {
     overflow: hidden;
     height: 100%;
@@ -890,7 +876,6 @@ main {
     }
 }
 
-/* 수행이력 선택 시 전체 페이지 배경색 변경 */
 #coupons-status-page.has-completed,
 #coupons-status-mobile-page.has-completed {
     background-color: #e40082;
@@ -919,7 +904,6 @@ main {
     color: #fff;
 }
 
-/* 수행이력 선택 시 리스트 섹션 배경색 변경 */
 #coupons-status-page.has-completed .coupon-list-section,
 #coupons-status-mobile-page.has-completed .coupon-list-section {
     background-color: #e40082;
@@ -932,7 +916,6 @@ main {
     color: #fff;
 }
 
-/* 수행이력 선택 시 이력서 링크 스타일 */
 #coupons-status-page.has-completed .resume-name-link,
 #coupons-status-mobile-page.has-completed .resume-name-link {
     color: #fff !important;
@@ -943,7 +926,6 @@ main {
     color: #fff !important;
 }
 
-/* 기존 쿠폰 페이지 스타일 (데스크톱용) */
 #coupons-status-page-old {
     padding: 0;
     position: relative;
@@ -1291,7 +1273,6 @@ main {
     color: #ff8fce;
 }
 
-/* 포토 프리뷰 숨김 */
 .photo-preview {
     display: none !important;
 }
@@ -1320,7 +1301,6 @@ main {
     transform: scale(5);
 }
 
-/* 모달 */
 .modal {
     display: none;
     position: fixed;
@@ -1414,9 +1394,6 @@ main {
     color: #ff8fce;
 }
 
-/* ============================================
-   10. 이력서 페이지
-   ============================================ */
 #resume-page {
     overflow: hidden;
     height: 100%;
@@ -1520,7 +1497,6 @@ main {
     padding-left: 0;
 }
 
-/* "할 수 있는 일", "해보고 싶은 일", "할 수 없는 일" 섹션의 li만 들여쓰기 (strong이 있는 li만) */
 .resume-section li:has(strong) {
     padding-left: 2rem;
 }
@@ -1554,6 +1530,12 @@ main {
     margin-top: 2rem;
 }
 
+@media (max-width: 768px) {
+    .resume-detail {
+        margin-bottom: calc(5rem + env(safe-area-inset-bottom));
+    }
+}
+
 .resume-list {
     display: flex;
     flex-wrap: wrap;
@@ -1582,7 +1564,6 @@ main {
     font-style: italic;
 }
 
-/* 데스크톱에서 모바일 버튼 숨기기 */
 @media (min-width: 769px) {
     .resume-mobile-buttons,
     .resume-buttons-below-content,
@@ -1593,9 +1574,6 @@ main {
     }
 }
 
-/* ============================================
-   11. 공통 스타일 - 섹션, 리스트 등
-   ============================================ */
 .intro-section h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
@@ -1758,9 +1736,6 @@ dd {
     left: 0;
 }
 
-/* ============================================
-   12. 애니메이션
-   ============================================ */
 @keyframes charWave {
     0%, 100% {
         transform: translateY(0) translateX(0);
@@ -1817,12 +1792,9 @@ dd {
     }
 }
 
-/* ============================================
-   13. 반응형 - 모바일 (max-width: 768px)
-   ============================================ */
 @media (max-width: 768px) {
     body {
-        font-size: 0.5rem;
+        font-size: 0.25rem;
     }
     
     .desktop-only {
@@ -1833,7 +1805,6 @@ dd {
         display: block;
     }
 
-    /* 홈 페이지 모바일 */
     #home-page {
         margin: 0;
         padding: 0;
@@ -1920,7 +1891,6 @@ dd {
         flex-shrink: 0;
     }
 
-    /* 매뉴얼 페이지 모바일 */
     #manual-page {
         margin: 0 1rem;
         width: calc(100% - 2rem);
@@ -1999,7 +1969,6 @@ dd {
         color: #ff8fce;
     }
 
-    /* 쿠폰 페이지 모바일 */
     #coupons-status-page,
     #coupons-status-mobile-page {
         margin: 0;
@@ -2105,14 +2074,12 @@ dd {
         display: none;
     }
 
-    /* 모바일에서 관리 버튼 숨김 */
     .btn-add,
     .btn-edit,
     .btn-delete {
         display: none !important;
     }
     
-    /* 모바일 쿠폰 페이지 표 너비 설정 및 중앙 정렬 */
     #coupons-status-mobile-page .coupon-table-wrapper {
         width: calc(100% - 2rem);
         margin: 0.75rem auto;
@@ -2133,7 +2100,6 @@ dd {
         overflow-x: hidden;
     }
     
-    /* 모바일에서 테이블 가로 스크롤 방지 */
     #coupons-status-mobile-page .coupons-table {
         table-layout: fixed;
         width: 100%;
@@ -2149,12 +2115,10 @@ dd {
         display: none !important;
     }
 
-    /* 모바일에서 coupons-table 양옆 패딩 제거 */
     #coupons-status-mobile-page .coupons-table {
         padding: 0;
     }
     
-    /* 모바일에서 coupon-table-wrapper 마진 조정 */
     #coupons-status-mobile-page .coupon-table-wrapper {
         margin: 0.75rem 0;
     }
@@ -2168,7 +2132,6 @@ dd {
         padding-left: 0;
     }
 
-    /* 기존 mobile-single-panel 스타일 유지 (호환성) */
     .mobile-single-panel {
         position: static !important;
         width: 100% !important;
@@ -2193,7 +2156,6 @@ dd {
         padding-left: 0;
     }
 
-    /* 이력서 페이지 모바일 */
     #resume-page {
         margin: 0 1rem;
         width: calc(100% - 2rem);
@@ -2387,30 +2349,23 @@ dd {
     }
 }
 
-/* ============================================
-   14. 데스크톱 전용 (min-width: 769px)
-   ============================================ */
 @media (min-width: 769px) {
     .mobile-only {
         display: none !important;
     }
     
-    /* 매뉴얼 페이지 모바일 버튼 숨김 */
     .manual-mobile-buttons {
         display: none !important;
     }
     
-    /* 모바일 쿠폰 페이지 숨김 */
     #coupons-status-mobile-page {
         display: none !important;
     }
     
-    /* 데스크톱 홈 페이지에서 방명록 네비게이션 숨김 */
     .home-nav-list li.desktop-only {
         display: none !important;
     }
     
-    /* 데스크톱 쿠폰 페이지: 원래 패널 구조 사용 */
     #coupons-status-page .coupon-split-container {
         display: none !important;
     }
@@ -2419,7 +2374,6 @@ dd {
         display: block !important;
     }
     
-    /* 데스크톱 네비게이션: text-decoration 제거 */
     .home-nav-link {
         text-decoration: none !important;
     }
@@ -2429,11 +2383,7 @@ dd {
     }
 }
 
-/* ============================================
-   15. 모바일 전용 (max-width: 768px)
-   ============================================ */
 @media (max-width: 768px) {
-    /* 데스크톱 쿠폰 페이지 숨김 */
     #coupons-status-page {
         display: none !important;
     }

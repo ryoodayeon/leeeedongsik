@@ -187,6 +187,7 @@ function showPage(pageName) {
                 const buttonsBelowList = document.querySelector('.resume-buttons-below-list');
                 if (buttonsBelowList) {
                     buttonsBelowList.classList.remove('has-active');
+                    buttonsBelowList.classList.remove('hide');
                 }
                 // 버튼 위치 업데이트
                 updateResumeMobileButtons();
