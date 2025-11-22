@@ -1520,15 +1520,9 @@ main {
     padding-left: 0;
 }
 
-/* "할 수 있는 일", "해보고 싶은 일", "할 수 없는 일" 섹션의 모든 li에 들여쓰기 */
-.resume-section:has(ol) li,
-.resume-section:has(ul) li {
+/* "할 수 있는 일", "해보고 싶은 일", "할 수 없는 일" 섹션의 li만 들여쓰기 (strong이 있는 li만) */
+.resume-section li:has(strong) {
     padding-left: 2rem;
-}
-
-/* 단, "경력 및 공모당선" 같은 섹션은 제외 (구조로 구분) */
-.resume-section:has(h4:contains("경력")) li {
-    padding-left: 0;
 }
 
 .resume-section li strong {
@@ -1828,7 +1822,7 @@ dd {
    ============================================ */
 @media (max-width: 768px) {
     body {
-        font-size: 0.75rem;
+        font-size: 0.5rem;
     }
     
     .desktop-only {
@@ -1960,20 +1954,21 @@ dd {
         height: auto;
         min-height: 100%;
         padding: 0;
-        padding-bottom: 0.75rem;
+        padding-bottom: calc(5rem + env(safe-area-inset-bottom));
     }
-
+    
     #manual-page .page-header {
         margin-top: 0.75rem;
     }
 
     .manual-content {
         margin: 0;
+        margin-bottom: calc(5rem + env(safe-area-inset-bottom));
         max-width: 100%;
     }
 
     .manual-mobile-buttons {
-    position: relative;
+        position: relative;
         bottom: auto;
         left: auto;
         right: auto;
@@ -1982,6 +1977,7 @@ dd {
         align-items: center;
         z-index: 1;
         margin-top: 4.5rem;
+        margin-bottom: calc(3rem + env(safe-area-inset-bottom));
     }
 
     .manual-mobile-back-btn,
@@ -2068,6 +2064,7 @@ dd {
     .coupon-content-display {
         padding: 0.75rem 0;
         padding-bottom: 0;
+        margin-bottom: calc(5rem + env(safe-area-inset-bottom));
     }
 
     .coupon-content-display:empty {
@@ -2076,19 +2073,28 @@ dd {
 
     .coupon-buttons-below-content {
         display: none;
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        z-index: 1;
     }
 
     .coupon-content-display:not(:empty) ~ .coupon-buttons-below-content {
         display: flex;
+        margin-top: 4.5rem;
+        margin-bottom: calc(3rem + env(safe-area-inset-bottom));
     }
 
     .coupon-buttons-below-list {
         display: flex;
-        position: fixed;
-        bottom: 0.5rem;
+        position: relative;
+        bottom: auto;
         left: 1rem;
         margin: 0;
-        z-index: 1000;
+        margin-top: 2rem;
+        margin-bottom: calc(3rem + env(safe-area-inset-bottom));
+        z-index: 1;
     }
 
     .coupon-content-display:not(:empty) ~ .coupon-buttons-below-content ~ .coupon-buttons-below-list {
@@ -2123,6 +2129,7 @@ dd {
     #coupons-status-mobile-page .coupon-content-display {
         padding: 0.75rem 0.5rem;
         padding-bottom: 0;
+        margin-bottom: calc(5rem + env(safe-area-inset-bottom));
         overflow-x: hidden;
     }
     
@@ -2256,6 +2263,8 @@ dd {
 
     .resume-content-display {
         padding: 0.75rem 0;
+        padding-bottom: 0;
+        margin-bottom: calc(5rem + env(safe-area-inset-bottom));
     }
 
     .resume-content-display:empty {
@@ -2280,7 +2289,7 @@ dd {
         align-items: center;
         z-index: 1;
         margin-top: 4.5rem;
-        margin-bottom: 0.75rem;
+        margin-bottom: calc(3rem + env(safe-area-inset-bottom));
     }
 
     .resume-buttons-below-content.show {
@@ -2288,14 +2297,16 @@ dd {
     }
 
     .resume-buttons-below-list {
-        position: fixed;
-        bottom: 1rem;
+        position: relative;
+        bottom: auto;
         left: 1rem;
-        right: 1rem;
+        right: auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        z-index: 1000;
+        z-index: 1;
+        margin-top: 2rem;
+        margin-bottom: calc(3rem + env(safe-area-inset-bottom));
     }
 
     .resume-buttons-below-list.hide {
