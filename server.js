@@ -400,6 +400,11 @@ app.delete('/api/guestbook/all', (req, res) => {
     });
 });
 
+// 모든 경로에 대해 index.html 서빙 (SPA 라우팅 지원)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 // 서버 시작 (0.0.0.0으로 바인딩하여 모든 네트워크 인터페이스에서 접근 가능)
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`서버가 http://localhost:${PORT} 에서 실행 중입니다.`);
