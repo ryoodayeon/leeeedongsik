@@ -1801,12 +1801,41 @@ dd {
 }
 
 @media (max-width: 768px) {
-    html {
+    body {
         font-size: 0.75rem;
     }
     
-    body {
-        font-size: 1rem;
+    body * {
+        font-size: inherit;
+    }
+    
+    .back-button-btn,
+    .global-back-btn,
+    .scroll-to-top-btn,
+    .home-nav-link,
+    .resume-index-link,
+    .coupon-index-link,
+    .home-title,
+    .home-description,
+    .manual-paragraph,
+    .resume-section,
+    .resume-section h4,
+    .resume-section li,
+    .resume-section p,
+    .guestbook-message,
+    .guestbook-date,
+    .coupon-mobile-notice,
+    .manual-mobile-back-btn,
+    .manual-mobile-scroll-top-btn,
+    .resume-mobile-back-btn,
+    .resume-mobile-scroll-top-btn,
+    .coupon-mobile-back-btn,
+    .coupon-mobile-scroll-top-btn,
+    .page-header h1,
+    .subtitle,
+    .subtitle-small,
+    .note {
+        font-size: inherit;
     }
     
     .desktop-only {
