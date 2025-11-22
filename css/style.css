@@ -1801,8 +1801,12 @@ dd {
 }
 
 @media (max-width: 768px) {
-    body {
+    html {
         font-size: 0.75rem;
+    }
+    
+    body {
+        font-size: 1rem;
     }
     
     .desktop-only {
