@@ -643,6 +643,7 @@ main {
     margin-bottom: 0;
     margin-top: 1.5rem;
     text-indent: 0;
+    white-space: pre-line;
 }
 
 .manual-paragraph:first-child {
@@ -651,6 +652,12 @@ main {
 
 .manual-paragraph strong {
     font-weight: 700;
+}
+
+.manual-paragraph .bullet {
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 0.25em;
 }
 
 #coupons-status-page {
@@ -2467,6 +2474,22 @@ dd {
     
     .resume-index-link:hover .char-wrapper span,
     .coupon-index-link:hover .char-wrapper span,
+    .resume-section a.link-wave:hover .syllable-wrapper span {
+        animation: none !important;
+    }
+    
+    /* 모바일에서 charWave 애니메이션 비활성화 */
+    .back-button-btn:hover .char-wrapper span,
+    .global-back-btn:hover .char-wrapper span,
+    .scroll-to-top-btn:hover .char-wrapper span,
+    .home-nav-link:hover .char-wrapper span,
+    .resume-index-link:hover .char-wrapper span,
+    .coupon-index-link:hover .char-wrapper span,
+    .guestbook-submit-btn:hover .char-wrapper span,
+    .btn-add:hover .char-wrapper span,
+    .btn-edit:hover .char-wrapper span,
+    .btn-delete:hover .char-wrapper span,
+    .resume-name-link:hover .resume-link-char,
     .resume-section a.link-wave:hover .syllable-wrapper span {
         animation: none !important;
     }

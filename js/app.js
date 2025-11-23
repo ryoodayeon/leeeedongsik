@@ -1154,8 +1154,12 @@ function initResumeLinks() {
                 }
             });
             
-            // 호버 이벤트로 파도타기 애니메이션
+            // 호버 이벤트로 파도타기 애니메이션 (모바일 제외)
             link.addEventListener('mouseenter', function() {
+                // 모바일에서는 애니메이션 비활성화
+                if (window.innerWidth <= 768) {
+                    return;
+                }
                 const chars = this.querySelectorAll('.resume-link-char');
                 chars.forEach((char, index) => {
                     // 애니메이션을 재시작하기 위해 초기화
@@ -1345,16 +1349,18 @@ function handleCouponClick(link, couponType) {
     // 즉시 내용 표시
     showCouponContent(couponType);
     
-    // 파도 애니메이션 효과 (글자 단위) - 비동기로 실행
-    const charSpans = link.querySelectorAll('.char-wrapper span');
-    charSpans.forEach((span, index) => {
-        setTimeout(() => {
-            span.style.animation = 'charWave 0.3s ease-in-out';
+    // 파도 애니메이션 효과 (글자 단위) - 비동기로 실행 (모바일 제외)
+    if (window.innerWidth > 768) {
+        const charSpans = link.querySelectorAll('.char-wrapper span');
+        charSpans.forEach((span, index) => {
             setTimeout(() => {
-                span.style.animation = '';
-            }, 300);
-        }, index * 20);
-    });
+                span.style.animation = 'charWave 0.3s ease-in-out';
+                setTimeout(() => {
+                    span.style.animation = '';
+                }, 300);
+            }, index * 20);
+        });
+    }
 }
 
 // 쿠폰 내용 표시
@@ -1599,16 +1605,18 @@ function handleResumeClick(link, resumeName) {
     // 즉시 내용 표시 (성능 개선)
     showResumeContent(resumeName);
     
-    // 파도 애니메이션 효과 (글자 단위) - 비동기로 실행
-    const charSpans = link.querySelectorAll('.char-wrapper span');
-    charSpans.forEach((span, index) => {
-        setTimeout(() => {
-            span.style.animation = 'charWave 0.3s ease-in-out';
+    // 파도 애니메이션 효과 (글자 단위) - 비동기로 실행 (모바일 제외)
+    if (window.innerWidth > 768) {
+        const charSpans = link.querySelectorAll('.char-wrapper span');
+        charSpans.forEach((span, index) => {
             setTimeout(() => {
-                span.style.animation = '';
-            }, 300);
-        }, index * 20);
-    });
+                span.style.animation = 'charWave 0.3s ease-in-out';
+                setTimeout(() => {
+                    span.style.animation = '';
+                }, 300);
+            }, index * 20);
+        });
+    }
     
     // 오른쪽으로 이동하는 애니메이션 (더 짧게)
     link.classList.add('moving');
