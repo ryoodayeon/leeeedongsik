@@ -1528,10 +1528,11 @@ main {
     padding-left: 0;
 }
 
-.resume-section li p .resume-indent-first-line {
-    display: inline-block;
-    padding-left: 2rem;
-    text-indent: -2rem;
+.resume-section li p.resume-indent-first-line {
+    text-indent: 2rem;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .resume-section p {

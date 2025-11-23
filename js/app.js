@@ -1736,7 +1736,17 @@ function showResumeContent(name) {
                         // "2-2"로 시작하는 부분을 찾아서 첫 줄만 들여쓰기 적용
                         let description = item.description;
                         if (description.includes('\n\n2-2')) {
-                            description = description.replace(/\n\n2-2/g, '\n\n<span class="resume-indent-first-line">2-2</span>');
+                            // "2-2"로 시작하는 부분을 별도 문단으로 분리하고 첫 줄만 들여쓰기
+                            const parts = description.split('\n\n2-2');
+                            if (parts.length === 2) {
+                                return `
+                        <li>
+                            <strong>${item.title}</strong>
+                            <p>${parts[0]}</p>
+                            <p class="resume-indent-first-line">2-2${parts[1]}</p>
+                        </li>
+                    `;
+                            }
                         }
                         return `
                         <li>
