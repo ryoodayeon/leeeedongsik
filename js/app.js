@@ -1732,12 +1732,19 @@ function showResumeContent(name) {
             <div class="resume-section">
                 <h4>할 수 있는 일</h4>
                 <ol>
-                    ${resumeData.canDo.map(item => `
+                    ${resumeData.canDo.map(item => {
+                        // "2-2"로 시작하는 부분을 찾아서 첫 줄만 들여쓰기 적용
+                        let description = item.description;
+                        if (description.includes('\n\n2-2')) {
+                            description = description.replace(/\n\n2-2/g, '\n\n<span class="resume-indent-first-line">2-2</span>');
+                        }
+                        return `
                         <li>
                             <strong>${item.title}</strong>
-                            <p>${item.description}</p>
+                            <p>${description}</p>
                         </li>
-                    `).join('')}
+                    `;
+                    }).join('')}
                 </ol>
             </div>
             
