@@ -2009,10 +2009,6 @@ dd {
     .manual-paragraph:first-child {
         margin-top: 0;
     }
-    
-    .manual-paragraph {
-        line-height: 1.3;
-    }
 
     .manual-mobile-buttons {
         position: relative;
