@@ -1641,38 +1641,58 @@ function showResumeContent(name) {
     
     // 팀 이력인 경우
     if (name === 'team') {
+        const teamData = resumeDatabase['team'];
+        if (!teamData) {
+            contentDiv.innerHTML = '<p>팀 이력서를 찾을 수 없습니다.</p>';
+            return;
+        }
+        
+        // 음절 단위로 분리하는 헬퍼 함수
+        const createSyllableWrapper = (text) => {
+            return text.split('').map((char, index) => {
+                const charSpan = char === ' ' ? '&nbsp;' : char;
+                return `<span style="--char-index: ${index}">${charSpan}</span>`;
+            }).join('');
+        };
+        
+        // 경력 리스트 생성
+        const careerList = teamData.career.map(item => {
+            const escapedItem = item.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            return `<li>${escapedItem}</li>`;
+        }).join('');
+        
+        // 연락망 생성
+        const instagramLink = `<a href="${teamData.contact.instagram.url}" target="_blank" class="link-wave"><span class="syllable-wrapper">${createSyllableWrapper(teamData.contact.instagram.text)}</span></a>`;
+        const emailLink = `<a href="${teamData.contact.email.url}" class="link-wave"><span class="syllable-wrapper">${createSyllableWrapper(teamData.contact.email.text)}</span></a>`;
+        
         const titleHtml = displayTitle ? '<h3>콜렉티브 이동식</h3>' : '';
         contentDiv.innerHTML = `
             <article class="individual-resume">
                 ${titleHtml}
                 <div class="resume-section">
                     <h4>구성</h4>
-                    <p>구정환, 민지홍, 박중현, 석유림, 정지윤</p>
+                    <p>${teamData.members}</p>
                 </div>
 
                 <div class="resume-section">
                     <h4>소개</h4>
                     <p>
-                        2024년 겨울, 한예종 미술원 재학생 5명이 모여 결성된 '콜렉티브 이동식'은 미술계의 '예비적 존재자'로서 느끼는 한계와 갈증, 그 과정을 함께 나누며 오히려 확고한 토대 없이 흔들리는 존재로서 '비작업'의 영역에 머물고자 한다. 손에 잡히든 잡히지 않든 무언가를 시도하며 유머와 회복, 실천의 가능성을 모색해나간다. 이들이 함께 주목하는 것은 장소성, 관계성, 미완성, 이동성이다.
-                    <br><span class="resume-second-paragraph">「2025 성북구청 마을만들기 공모사업」의 지원을 받아 '안녕기획부'라는 이름으로도 활동하고 있다. 돌곶이의 역사와 일상을 바탕으로 마을과 이웃의 '안녕'을 도모하는 프로젝트를 진행 중이다. 이 기획은 석관동이 과거 국가안전기획부가 자리했던 곳으로, 현재는 이웃주민과 학생 작업자들이 교차하는 공간임에도 불구하고 여전히 서로의 안녕을 묻는 시도가 부재하다는 문제의식에서 출발했다. 학생 작업자와 이웃을 연결하는 영상 스크리닝, 관객과의 대화, 제작 워크샵 등의 프로그램을 운영해왔다.</span>
+                        ${teamData.introduction}
+                    <br><span class="resume-second-paragraph">${teamData.introductionSecond}</span>
                     </p>
                 </div>
 
                 <div class="resume-section">
                     <h4>경력 및 공모당선</h4>
                     <ul>
-                        <li>문화예술 / 성북구청 마을만들기 공모 사업 &lt;돌곶이 마실극장 : 열린 영상제&gt; / 화랑 어린이 공원 / 2025</li>
-                        <li>문화예술 / 돌곶이 생활예술문화센터 지원 – 이미지 지도 제작 워크샵 및 사진전 &lt;기억지도 만들기&gt; / 돌곶이생활예술문화센터 / 2025</li>
-                        <li>문화예술 / 돌곶이 생활예술문화센터 지원 – 핀홀 카메라 제작 워크샵 &lt;바늘 구멍 너머로 본 돌곶이&gt; / 돌곶이생활예술문화센터 / 2025</li>
-                        <li>문화예술 / 성북구청 마을만들기 공모 사업 &lt;돌곶이 마실극장 : 이웃과의 만남&gt; / 돌곶이생활예술문화센터 / 2025</li>
-                        <li>다원예술 / 팔레스타인 후원을 위한 아트마켓 &lt;수박에 줄긋기&gt; / 이태원 LVHS / 2025</li>
+                        ${careerList}
                     </ul>
                 </div>
 
                 <div class="resume-section">
                     <h4>연락망</h4>
-                    <p>인스타그램 : <a href="https://www.instagram.com/leeeedongsik/" target="_blank" class="link-wave"><span class="syllable-wrapper"><span style="--char-index: 0">@</span><span style="--char-index: 1">l</span><span style="--char-index: 2">e</span><span style="--char-index: 3">e</span><span style="--char-index: 4">e</span><span style="--char-index: 5">e</span><span style="--char-index: 6">d</span><span style="--char-index: 7">o</span><span style="--char-index: 8">n</span><span style="--char-index: 9">g</span><span style="--char-index: 10">s</span><span style="--char-index: 11">i</span><span style="--char-index: 12">k</span></span></a></p>
-                    <p>메일 : <a href="mailto:leeeedongsik@gmail.com" class="link-wave"><span class="syllable-wrapper"><span style="--char-index: 0">l</span><span style="--char-index: 1">e</span><span style="--char-index: 2">e</span><span style="--char-index: 3">e</span><span style="--char-index: 4">e</span><span style="--char-index: 5">d</span><span style="--char-index: 6">o</span><span style="--char-index: 7">n</span><span style="--char-index: 8">g</span><span style="--char-index: 9">s</span><span style="--char-index: 10">i</span><span style="--char-index: 11">k</span><span style="--char-index: 12">@</span><span style="--char-index: 13">g</span><span style="--char-index: 14">m</span><span style="--char-index: 15">a</span><span style="--char-index: 16">i</span><span style="--char-index: 17">l</span><span style="--char-index: 18">.</span><span style="--char-index: 19">c</span><span style="--char-index: 20">o</span><span style="--char-index: 21">m</span></span></a></p>
+                    <p>인스타그램 : ${instagramLink}</p>
+                    <p>메일 : ${emailLink}</p>
                 </div>
             </article>
         `;
