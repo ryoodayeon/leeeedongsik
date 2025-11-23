@@ -459,6 +459,7 @@ async function loadCoupons() {
 function createResumeLink(name) {
     const nameMap = {
         '콜렉티브 이동식': 'team',
+        '이동식': 'team',
         '구정환': '구정환',
         '민지홍': '민지홍',
         '박중현': '박중현',
