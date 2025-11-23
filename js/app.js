@@ -457,6 +457,11 @@ async function loadCoupons() {
 
 // 이름을 이력서 링크로 변환하는 함수
 function createResumeLink(name) {
+    if (!name) return '';
+    
+    // 공백 제거 및 정규화
+    const normalizedName = name.trim();
+    
     const nameMap = {
         '콜렉티브 이동식': 'team',
         '이동식': 'team',
@@ -467,10 +472,10 @@ function createResumeLink(name) {
         '정지윤': '정지윤'
     };
     
-    const resumeKey = nameMap[name];
+    const resumeKey = nameMap[normalizedName];
     if (resumeKey) {
-        // 음절 단위로 분리하여 링크 생성
-        const chars = name.split('').map((char, index) => {
+        // 원본 이름을 사용하여 음절 단위로 분리하여 링크 생성
+        const chars = normalizedName.split('').map((char, index) => {
             const charSpan = char === ' ' ? '&nbsp;' : char;
             return `<span style="--char-index: ${index}" class="resume-link-char">${charSpan}</span>`;
         }).join('');
