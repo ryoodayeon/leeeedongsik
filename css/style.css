@@ -2454,4 +2454,20 @@ dd {
     #coupons-status-page {
         display: none !important;
     }
+    
+    /* 모바일에서 호버 효과로 인한 위치 변경 방지 */
+    .resume-index-link:hover .char-wrapper,
+    .coupon-index-link:hover .char-wrapper {
+        transform: none !important;
+    }
+    
+    .resume-section a.link-wave:hover .syllable-wrapper span {
+        transform: none !important;
+    }
+    
+    .resume-index-link:hover .char-wrapper span,
+    .coupon-index-link:hover .char-wrapper span,
+    .resume-section a.link-wave:hover .syllable-wrapper span {
+        animation: none !important;
+    }
 }
