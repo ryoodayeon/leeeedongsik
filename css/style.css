@@ -270,6 +270,8 @@ main {
 
 .resume-name-link:hover .resume-link-char {
     color: #ff8fce;
+    animation: charWave 0.6s ease-in-out;
+    animation-delay: calc(var(--char-index) * 0.05s);
 }
 
 .resume-section a.link-wave {
@@ -2075,7 +2077,7 @@ dd {
         margin-top: 0;
         margin-left: 1rem;
         margin-right: 1rem;
-        margin-bottom: calc(5rem + env(safe-area-inset-bottom));
+        margin-bottom: calc(4.5rem + env(safe-area-inset-bottom));
         position: relative;
         background-color: #fff;
         z-index: 1;
@@ -2491,6 +2493,16 @@ dd {
     .btn-delete:hover .char-wrapper span,
     .resume-name-link:hover .resume-link-char,
     .resume-section a.link-wave:hover .syllable-wrapper span {
+        animation: none !important;
+    }
+    
+    /* 모바일에서 resume-name-link 호버 색상 변경은 유지하되 애니메이션만 비활성화 */
+    .resume-name-link:hover {
+        color: #ff8fce;
+    }
+    
+    .resume-name-link:hover .resume-link-char {
+        color: #ff8fce;
         animation: none !important;
     }
 }
