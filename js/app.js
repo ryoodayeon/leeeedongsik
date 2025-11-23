@@ -472,6 +472,24 @@ function createResumeLink(name) {
         '정지윤': '정지윤'
     };
     
+    // 여러 이름이 공백으로 구분되어 있는지 확인
+    const nameParts = normalizedName.split(/\s+/).filter(part => part.length > 0);
+    
+    // 여러 이름이 있는 경우 각각을 링크로 변환
+    if (nameParts.length > 1) {
+        return nameParts.map((part, index) => {
+            const resumeKey = nameMap[part];
+            if (resumeKey) {
+                const chars = part.split('').map((char, charIndex) => {
+                    return `<span style="--char-index: ${charIndex}" class="resume-link-char">${char}</span>`;
+                }).join('');
+                return `<a href="#" class="resume-name-link" data-resume="${resumeKey}">${chars}</a>`;
+            }
+            return part;
+        }).join(' ');
+    }
+    
+    // 단일 이름인 경우 기존 로직 사용
     const resumeKey = nameMap[normalizedName];
     if (resumeKey) {
         // 원본 이름을 사용하여 음절 단위로 분리하여 링크 생성
