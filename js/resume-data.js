@@ -32,7 +32,17 @@ const resumeDatabase = {
             }
         ],
         wantToDo: '역사에 이름을 남겨보고 싶습니다. 무언가 도모하고 있다면 껴주세요.',
-        cannotDo: ['테러는 못합니다.', '축구 못합니다. 제 역할은 항상 볼보이였습니다. 골키퍼도 과분합니다.']
+        cannotDo: ['테러는 못합니다.', '축구 못합니다. 제 역할은 항상 볼보이였습니다. 골키퍼도 과분합니다.'],
+        contact: {
+            instagram: {
+                url: 'https://www.instagram.com/ku_9ang/',
+                text: '@ku_9ang'
+            },
+            email: {
+                url: 'mailto:braveson9@gmail.com',
+                text: 'braveson9@gmail.com'
+            }
+        }
     },
     '민지홍': {
         canDo: [
@@ -62,7 +72,17 @@ const resumeDatabase = {
             }
         ],
         wantToDo: ['노래를 만들어 보고 싶습니다. 코러스라도.', '제가 나온 초등학교 나무위키 출신인물 칸에 적힐 만한 일'],
-        cannotDo: []
+        cannotDo: ['매운 것을 못 먹습니다. 자랑은 아니지만 어느정도 였냐면 중학교 1학년 때 튀김우동을 매워했습니다.'],
+        contact: {
+            instagram: {
+                url: 'https://www.instagram.com/zeeegnoh/',
+                text: '@zeeegnoh'
+            },
+            email: {
+                url: 'mailto:zeeegnoh@gmail.com',
+                text: 'zeeegnoh@gmail.com'
+            }
+        }
     },
     '박중현': {
         canDo: [
@@ -141,7 +161,17 @@ const resumeDatabase = {
                 description: '겁이 많은 편이 아닙니다. 여러 미스테리, 음모론, 실종사건, 미해결 사건, 공포게임 영상물 매니아입니다. 공포영화는 시시해요. 흉가 체험 등도 가능합니다. 언제든 불러주세요.'
             }
         ],
-        cannotDo: ['언젠가 다시 볼 사람과의 대화', '매운거 먹기', '아침 일찍 일어나서 해야하는 일 (이사 제외)', '술 마시기']
+        cannotDo: ['언젠가 다시 볼 사람과의 가벼운 대화', '매운거 먹기', '아침 일찍 일어나서 해야하는 일 (이사 제외)', '술 마시기'],
+        contact: {
+            instagram: {
+                url: 'https://www.instagram.com/tattooist_99p/',
+                text: '@tattooist_99p'
+            },
+            email: {
+                url: 'mailto:99p.in.my.head@gmail.com',
+                text: '99p.in.my.head@gmail.com'
+            }
+        }
     },
     '석유림': {
         canDo: [
@@ -195,7 +225,17 @@ const resumeDatabase = {
             }
         ],
         wantToDo: ['뮤직비디오 촬영', '스탠딩 코미디 스크립트 작성', '시트콤 시나리오 작성', '아무튼 가벼운 엉덩이를 필요로 하는, 일시적인 소동으로 남을 모든 일', '탐정 (불륜 조사 선호)'],
-        cannotDo: ['벌금 500 이상의 범법행위 (협의 후 조정가능)', '그림 그려달라는 요청']
+        cannotDo: ['벌금 500 이상의 범법행위 (협의 후 조정가능)', '그림 그려달라는 요청'],
+        contact: {
+            instagram: {
+                url: 'https://www.instagram.com/para___sol/',
+                text: 'para___sol'
+            },
+            email: {
+                url: 'mailto:yurim9229@naver.com',
+                text: 'yurim9229@naver.com'
+            }
+        }
     },
     '정지윤': {
         note: '*순서는 임의로 작성한 것이며, 각 순서에는 위계가 없습니다.',
@@ -242,7 +282,23 @@ const resumeDatabase = {
             }
         ],
         wantToDo: ['이번 전시는 오프닝 다과비에 지출이 불가하여 생략되었으나, 저는 오프닝 다과를 먹고 싶습니다.', '각종 연구자 친구를 찾습니다. 노고와 기쁨을 적당히 떠넘길 사람.', '헤비 전시 관람자와 함께하고 싶습니다. 서로의 부채감이 되어 걸어다닐 사람.', '형식이 무엇이든 몸과 관련된 작업을 더 펼치고 싶습니다.', '저시력 감상 프로토콜 제작, 장애예술인과의 협업 경험으로 접근성과 장애담론에 대해 계속 공부하고 싶습니다.', '전시 서문, 도록, 스테이트먼트 등 각종 지류 정리(시급)', '지난 여름 편도선염, 급성 간염으로 입원해 금주 중입니다. 따뜻한 샤워 후 시원한 맥주 500cc를 한 번에 벌컥벌컥 마시고 싶습니다.', '오하와사 매일 1등.'],
-        cannotDo: ['도슨트 노동은 썩 좋은 기억이 아니었습니다.', '\'미술 이론 전공자와 함께 전시를 본다\'는 기대를 품은 자와 함께 전시보기.', '젠더불문 이공계열 전공자(현업자) 및 사운드클라우드 업로더와의 연애.', '주기적인 월경.', '미소지니 발언은 아니지만, 외출을 안했으면 안했지 추레하게 입고 다니는 일은 어렵습니다.', '이제 장발은 못할 것 같아요.', '시끄러운 소음 견디기 불가.']
+        cannotDo: ['도슨트 노동은 썩 좋은 기억이 아니었습니다.', '\'미술 이론 전공자와 함께 전시를 본다\'는 기대를 품은 자와 함께 전시보기.', '젠더불문 이공계열 전공자(현업자) 및 사운드클라우드 업로더와의 연애.', '주기적인 월경.', '미소지니 발언은 아니지만, 외출을 안했으면 안했지 추레하게 입고 다니는 일은 어렵습니다.', '이제 장발은 못할 것 같아요.', '시끄러운 소음 견디기 불가.'],
+        contact: {
+            instagram: {
+                url: 'https://www.instagram.com/standstill_yun/',
+                text: '@standstill_yun'
+            },
+            email: [
+                {
+                    url: 'mailto:jjy0829d@naver.com',
+                    text: 'jjy0829d@naver.com'
+                },
+                {
+                    url: 'mailto:jjy0829d@gmail.com',
+                    text: 'jjy0829d@gmail.com'
+                }
+            ]
+        }
     },
     'team': {
         type: 'team',

@@ -1748,6 +1748,31 @@ function showResumeContent(name) {
                 </ul>
             </div>
             ` : ''}
+            
+            ${resumeData.contact && (resumeData.contact.instagram?.url || resumeData.contact.email) ? `
+            <div class="resume-section">
+                <h4>연락망</h4>
+                ${resumeData.contact.instagram?.url ? `
+                    <p>인스타그램 : <a href="${resumeData.contact.instagram.url}" target="_blank" class="link-wave"><span class="syllable-wrapper">${resumeData.contact.instagram.text.split('').map((char, index) => {
+                        const charSpan = char === ' ' ? '&nbsp;' : char;
+                        return `<span style="--char-index: ${index}">${charSpan}</span>`;
+                    }).join('')}</span></a></p>
+                ` : ''}
+                ${Array.isArray(resumeData.contact.email) ? `
+                    ${resumeData.contact.email.map((email, idx) => `
+                        <p>메일${resumeData.contact.email.length > 1 ? ` ${idx + 1}` : ''} : <a href="${email.url}" class="link-wave"><span class="syllable-wrapper">${email.text.split('').map((char, index) => {
+                            const charSpan = char === ' ' ? '&nbsp;' : char;
+                            return `<span style="--char-index: ${index}">${charSpan}</span>`;
+                        }).join('')}</span></a></p>
+                    `).join('')}
+                ` : resumeData.contact.email?.url ? `
+                    <p>메일 : <a href="${resumeData.contact.email.url}" class="link-wave"><span class="syllable-wrapper">${resumeData.contact.email.text.split('').map((char, index) => {
+                        const charSpan = char === ' ' ? '&nbsp;' : char;
+                        return `<span style="--char-index: ${index}">${charSpan}</span>`;
+                    }).join('')}</span></a></p>
+                ` : ''}
+            </div>
+            ` : ''}
         </article>
     `;
     
