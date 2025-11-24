@@ -1446,6 +1446,21 @@ main {
     animation: fadeIn 0.5s ease;
 }
 
+@media (min-width: 1920px) {
+    .resume-content-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    .resume-content-display {
+        max-width: 800px;
+        width: 100%;
+        margin: 0;
+        padding: 2rem 2rem 2rem 2rem;
+    }
+}
+
 .resume-content-display::-webkit-scrollbar {
     display: none;
 }
